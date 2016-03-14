@@ -1,7 +1,7 @@
 # PhysicalValue for Swift
 
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)]
-[![Platform](https://img.shields.io/badge/platform-ios%7Cosx-lighthgrey.svg)]
+![License](https://img.shields.io/github/license/mashape/apistatus.svg)
+![Platform](https://img.shields.io/badge/platform-ios%7Cosx-lighthgrey.svg)
 
 
 A Swift based types for expressing/converting physical values in various units.
