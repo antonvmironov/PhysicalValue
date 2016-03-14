@@ -15,6 +15,14 @@
 		F87F90C61C96331600B915A1 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C01C96331600B915A1 /* Angle.swift */; };
 		F87F90C71C96331600B915A1 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C11C96331600B915A1 /* Length.swift */; };
 		F87F90C81C96331600B915A1 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C21C96331600B915A1 /* Time.swift */; };
+		F87F90D81C96440000B915A1 /* PhysicalValue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F90CE1C96440000B915A1 /* PhysicalValue.framework */; };
+		F87F90E51C96446700B915A1 /* AngleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90B51C957F5800B915A1 /* AngleTests.swift */; };
+		F87F90E61C96446B00B915A1 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C21C96331600B915A1 /* Time.swift */; };
+		F87F90E71C96447200B915A1 /* MathValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BC1C96331600B915A1 /* MathValue.swift */; };
+		F87F90E81C96447200B915A1 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BD1C96331600B915A1 /* PhysicalUnit.swift */; };
+		F87F90E91C96447200B915A1 /* PhysicalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BE1C96331600B915A1 /* PhysicalValue.swift */; };
+		F87F90EA1C96447200B915A1 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C01C96331600B915A1 /* Angle.swift */; };
+		F87F90EB1C96447200B915A1 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C11C96331600B915A1 /* Length.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +33,19 @@
 			remoteGlobalIDString = F87F90921C957E3600B915A1;
 			remoteInfo = PhysicalValue;
 		};
+		F87F90D91C96440000B915A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87F908A1C957E3600B915A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87F90CD1C96440000B915A1;
+			remoteInfo = PhysicalValue;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F87F90931C957E3600B915A1 /* PhysicalValue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicalValue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F90981C957E3600B915A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F87F909D1C957E3600B915A1 /* PhysicalValueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicalValueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87F909D1C957E3600B915A1 /* PhysicalValueTests_osx.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicalValueTests_osx.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F90A41C957E3600B915A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F87F90B51C957F5800B915A1 /* AngleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleTests.swift; sourceTree = "<group>"; };
 		F87F90BC1C96331600B915A1 /* MathValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathValue.swift; sourceTree = "<group>"; };
@@ -39,6 +54,8 @@
 		F87F90C01C96331600B915A1 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		F87F90C11C96331600B915A1 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		F87F90C21C96331600B915A1 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		F87F90CE1C96440000B915A1 /* PhysicalValue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicalValue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87F90D71C96440000B915A1 /* PhysicalValueTests_ios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicalValueTests_ios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87F909E1C957E3600B915A1 /* PhysicalValue.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87F90CA1C96440000B915A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87F90D41C96440000B915A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87F90D81C96440000B915A1 /* PhysicalValue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				F87F90931C957E3600B915A1 /* PhysicalValue.framework */,
-				F87F909D1C957E3600B915A1 /* PhysicalValueTests.xctest */,
+				F87F909D1C957E3600B915A1 /* PhysicalValueTests_osx.xctest */,
+				F87F90CE1C96440000B915A1 /* PhysicalValue.framework */,
+				F87F90D71C96440000B915A1 /* PhysicalValueTests_ios.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,12 +161,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F87F90CB1C96440000B915A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F87F90921C957E3600B915A1 /* PhysicalValue */ = {
+		F87F90921C957E3600B915A1 /* PhysicalValue_osx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F87F90A71C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue" */;
+			buildConfigurationList = F87F90A71C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue_osx" */;
 			buildPhases = (
 				F87F908E1C957E3600B915A1 /* Sources */,
 				F87F908F1C957E3600B915A1 /* Frameworks */,
@@ -143,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = PhysicalValue;
+			name = PhysicalValue_osx;
 			productName = PhysicalValue;
 			productReference = F87F90931C957E3600B915A1 /* PhysicalValue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F87F909C1C957E3600B915A1 /* PhysicalValueTests */ = {
+		F87F909C1C957E3600B915A1 /* PhysicalValueTests_osx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F87F90AA1C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests" */;
+			buildConfigurationList = F87F90AA1C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests_osx" */;
 			buildPhases = (
 				F87F90991C957E3600B915A1 /* Sources */,
 				F87F909A1C957E3600B915A1 /* Frameworks */,
@@ -161,9 +202,45 @@
 			dependencies = (
 				F87F90A01C957E3600B915A1 /* PBXTargetDependency */,
 			);
-			name = PhysicalValueTests;
+			name = PhysicalValueTests_osx;
 			productName = PhysicalValueTests;
-			productReference = F87F909D1C957E3600B915A1 /* PhysicalValueTests.xctest */;
+			productReference = F87F909D1C957E3600B915A1 /* PhysicalValueTests_osx.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F87F90CD1C96440000B915A1 /* PhysicalValue_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F87F90DF1C96440000B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue_ios" */;
+			buildPhases = (
+				F87F90C91C96440000B915A1 /* Sources */,
+				F87F90CA1C96440000B915A1 /* Frameworks */,
+				F87F90CB1C96440000B915A1 /* Headers */,
+				F87F90CC1C96440000B915A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhysicalValue_ios;
+			productName = PhysicalValue;
+			productReference = F87F90CE1C96440000B915A1 /* PhysicalValue.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F87F90D61C96440000B915A1 /* PhysicalValueTests_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F87F90E21C96440000B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests_ios" */;
+			buildPhases = (
+				F87F90D31C96440000B915A1 /* Sources */,
+				F87F90D41C96440000B915A1 /* Frameworks */,
+				F87F90D51C96440000B915A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F87F90DA1C96440000B915A1 /* PBXTargetDependency */,
+			);
+			name = PhysicalValueTests_ios;
+			productName = PhysicalValueTests;
+			productReference = F87F90D71C96440000B915A1 /* PhysicalValueTests_ios.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,6 +259,12 @@
 					F87F909C1C957E3600B915A1 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					F87F90CD1C96440000B915A1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					F87F90D61C96440000B915A1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = F87F908D1C957E3600B915A1 /* Build configuration list for PBXProject "PhysicalValue" */;
@@ -196,8 +279,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F87F90921C957E3600B915A1 /* PhysicalValue */,
-				F87F909C1C957E3600B915A1 /* PhysicalValueTests */,
+				F87F90921C957E3600B915A1 /* PhysicalValue_osx */,
+				F87F909C1C957E3600B915A1 /* PhysicalValueTests_osx */,
+				F87F90CD1C96440000B915A1 /* PhysicalValue_ios */,
+				F87F90D61C96440000B915A1 /* PhysicalValueTests_ios */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +296,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F87F909B1C957E3600B915A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87F90CC1C96440000B915A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87F90D51C96440000B915A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,13 +340,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F87F90C91C96440000B915A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87F90E91C96447200B915A1 /* PhysicalValue.swift in Sources */,
+				F87F90EB1C96447200B915A1 /* Length.swift in Sources */,
+				F87F90EA1C96447200B915A1 /* Angle.swift in Sources */,
+				F87F90E61C96446B00B915A1 /* Time.swift in Sources */,
+				F87F90E81C96447200B915A1 /* PhysicalUnit.swift in Sources */,
+				F87F90E71C96447200B915A1 /* MathValue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87F90D31C96440000B915A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87F90E51C96446700B915A1 /* AngleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		F87F90A01C957E3600B915A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F87F90921C957E3600B915A1 /* PhysicalValue */;
+			target = F87F90921C957E3600B915A1 /* PhysicalValue_osx */;
 			targetProxy = F87F909F1C957E3600B915A1 /* PBXContainerItemProxy */;
+		};
+		F87F90DA1C96440000B915A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87F90CD1C96440000B915A1 /* PhysicalValue_ios */;
+			targetProxy = F87F90D91C96440000B915A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -354,7 +479,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValue;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PhysicalValue;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -374,7 +499,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValue;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PhysicalValue;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -404,6 +529,74 @@
 			};
 			name = Release;
 		};
+		F87F90E01C96440000B915A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PhysicalValue/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValue;
+				PRODUCT_NAME = PhysicalValue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F87F90E11C96440000B915A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PhysicalValue/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValue;
+				PRODUCT_NAME = PhysicalValue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F87F90E31C96440000B915A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PhysicalValueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F87F90E41C96440000B915A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PhysicalValueTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonvmironov.PhysicalValueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,19 +609,37 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F87F90A71C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue" */ = {
+		F87F90A71C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue_osx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F87F90A81C957E3600B915A1 /* Debug */,
 				F87F90A91C957E3600B915A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		F87F90AA1C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests" */ = {
+		F87F90AA1C957E3600B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests_osx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F87F90AB1C957E3600B915A1 /* Debug */,
 				F87F90AC1C957E3600B915A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F87F90DF1C96440000B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValue_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F87F90E01C96440000B915A1 /* Debug */,
+				F87F90E11C96440000B915A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F87F90E21C96440000B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests_ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F87F90E31C96440000B915A1 /* Debug */,
+				F87F90E41C96440000B915A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
