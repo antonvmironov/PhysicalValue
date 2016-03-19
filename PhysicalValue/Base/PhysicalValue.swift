@@ -6,9 +6,6 @@
 //  Copyright © 2016 Anton Mironov. All rights reserved.
 //
 
-import Foundation
-
-
 public protocol PhysicalValue: Equatable, CustomStringConvertible {
     associatedtype Unit: PhysicalUnit
 
@@ -22,7 +19,7 @@ public protocol PhysicalValue: Equatable, CustomStringConvertible {
     mutating func setAmount(amount: MathValue, unit: Unit)
 }
 
-
+// MARK: -
 public extension PhysicalValue {
     mutating func changeUnits(toUnit: Unit) {
         self.amount = Unit.transform(self.amount, fromUnit: self.unit, toUnit: toUnit)
@@ -43,6 +40,9 @@ public extension PhysicalValue {
     }
 }
 
+public func *<T: PhysicalValue>(lhs: MathValue, rhs: T.Unit) -> T {
+    return T(amount: lhs, unit: rhs)
+}
 
 public func ==<T: PhysicalValue>(lhs: T, rhs: T) -> Bool {
     if lhs.unit == rhs.unit {
@@ -52,9 +52,4 @@ public func ==<T: PhysicalValue>(lhs: T, rhs: T) -> Bool {
         let rightNormal = rhs.unit.normalFromAmount(rhs.amount)
         return isEqual(leftNormal, rhs: rightNormal)
     }
-}
-
-
-public func *<T: PhysicalValue>(lhs: MathValue, rhs: T.Unit) -> T {
-    return T(amount: lhs, unit: rhs)
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public struct Time: PhysicalValue {
     public typealias Unit = TimeUnit
 
@@ -29,8 +28,10 @@ public struct Time: PhysicalValue {
     }
 }
 
+// MARK: -
+public enum TimeUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
+    // Normal is 1 Second
 
-public enum TimeUnit: PhysicalUnit {
     case Year
     case Day
     case Hour
@@ -39,6 +40,8 @@ public enum TimeUnit: PhysicalUnit {
     case Millisecond
     case Microsecond
     case Nanosecond
+
+    public var kind: PhysicalUnitKind { return .Time(self) }
 
     public var fractionOfNormal: MathValue {
         switch self {

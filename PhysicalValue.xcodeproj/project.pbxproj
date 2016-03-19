@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F856B8091C98C1ED00FC59D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B8081C98C1ED00FC59D7 /* Bag.swift */; };
+		F856B80A1C98C1ED00FC59D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B8081C98C1ED00FC59D7 /* Bag.swift */; };
+		F856B80C1C98C24C00FC59D7 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B80B1C98C24C00FC59D7 /* Volume.swift */; };
+		F856B80D1C98C24C00FC59D7 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B80B1C98C24C00FC59D7 /* Volume.swift */; };
 		F87F909E1C957E3600B915A1 /* PhysicalValue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F90931C957E3600B915A1 /* PhysicalValue.framework */; };
 		F87F90B61C957F5800B915A1 /* AngleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90B51C957F5800B915A1 /* AngleTests.swift */; };
 		F87F90C31C96331600B915A1 /* MathValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BC1C96331600B915A1 /* MathValue.swift */; };
-		F87F90C41C96331600B915A1 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BD1C96331600B915A1 /* PhysicalUnit.swift */; };
 		F87F90C51C96331600B915A1 /* PhysicalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BE1C96331600B915A1 /* PhysicalValue.swift */; };
 		F87F90C61C96331600B915A1 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C01C96331600B915A1 /* Angle.swift */; };
 		F87F90C71C96331600B915A1 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C11C96331600B915A1 /* Length.swift */; };
@@ -19,10 +22,21 @@
 		F87F90E51C96446700B915A1 /* AngleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90B51C957F5800B915A1 /* AngleTests.swift */; };
 		F87F90E61C96446B00B915A1 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C21C96331600B915A1 /* Time.swift */; };
 		F87F90E71C96447200B915A1 /* MathValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BC1C96331600B915A1 /* MathValue.swift */; };
-		F87F90E81C96447200B915A1 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BD1C96331600B915A1 /* PhysicalUnit.swift */; };
 		F87F90E91C96447200B915A1 /* PhysicalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90BE1C96331600B915A1 /* PhysicalValue.swift */; };
 		F87F90EA1C96447200B915A1 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C01C96331600B915A1 /* Angle.swift */; };
 		F87F90EB1C96447200B915A1 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90C11C96331600B915A1 /* Length.swift */; };
+		F87F90F71C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90F41C96506400B915A1 /* CompoundPhysicalUnit.swift */; };
+		F87F90F81C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90F41C96506400B915A1 /* CompoundPhysicalUnit.swift */; };
+		F87F90FA1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90F91C96508700B915A1 /* PhysicalUnitKind.swift */; };
+		F87F90FB1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F90F91C96508700B915A1 /* PhysicalUnitKind.swift */; };
+		F8976AC31C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC01C9CB06400D5F093 /* AtomicPhysicalUnit.swift */; };
+		F8976AC41C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC01C9CB06400D5F093 /* AtomicPhysicalUnit.swift */; };
+		F8976AC51C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */; };
+		F8976AC61C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */; };
+		F8976AC71C9CB06400D5F093 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */; };
+		F8976AC81C9CB06400D5F093 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */; };
+		F8CA2F311C98C18E00CC6170 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA2F301C98C18E00CC6170 /* Extensions.swift */; };
+		F8CA2F321C98C18E00CC6170 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA2F301C98C18E00CC6170 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,19 +57,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F856B8081C98C1ED00FC59D7 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		F856B80B1C98C24C00FC59D7 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		F87F90931C957E3600B915A1 /* PhysicalValue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicalValue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F90981C957E3600B915A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F87F909D1C957E3600B915A1 /* PhysicalValueTests_osx.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicalValueTests_osx.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F90A41C957E3600B915A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F87F90B51C957F5800B915A1 /* AngleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleTests.swift; sourceTree = "<group>"; };
 		F87F90BC1C96331600B915A1 /* MathValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathValue.swift; sourceTree = "<group>"; };
-		F87F90BD1C96331600B915A1 /* PhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalUnit.swift; sourceTree = "<group>"; };
 		F87F90BE1C96331600B915A1 /* PhysicalValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalValue.swift; sourceTree = "<group>"; };
 		F87F90C01C96331600B915A1 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		F87F90C11C96331600B915A1 /* Length.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
 		F87F90C21C96331600B915A1 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		F87F90CE1C96440000B915A1 /* PhysicalValue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicalValue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F90D71C96440000B915A1 /* PhysicalValueTests_ios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicalValueTests_ios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87F90F41C96506400B915A1 /* CompoundPhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundPhysicalUnit.swift; sourceTree = "<group>"; };
+		F87F90F91C96508700B915A1 /* PhysicalUnitKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalUnitKind.swift; sourceTree = "<group>"; };
+		F8976AC01C9CB06400D5F093 /* AtomicPhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicPhysicalUnit.swift; sourceTree = "<group>"; };
+		F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearPhysicalUnit.swift; sourceTree = "<group>"; };
+		F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalUnit.swift; sourceTree = "<group>"; };
+		F8CA2F301C98C18E00CC6170 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				F87F90BB1C96331600B915A1 /* Base */,
+				F87F90F21C96506400B915A1 /* Compound */,
 				F87F90BF1C96331600B915A1 /* Types */,
+				F8CA2F2F1C98C18600CC6170 /* Utilities */,
 				F87F90981C957E3600B915A1 /* Info.plist */,
 			);
 			path = PhysicalValue;
@@ -134,8 +157,8 @@
 		F87F90BB1C96331600B915A1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F8976ABF1C9CB06400D5F093 /* Unit */,
 				F87F90BC1C96331600B915A1 /* MathValue.swift */,
-				F87F90BD1C96331600B915A1 /* PhysicalUnit.swift */,
 				F87F90BE1C96331600B915A1 /* PhysicalValue.swift */,
 			);
 			path = Base;
@@ -147,8 +170,37 @@
 				F87F90C01C96331600B915A1 /* Angle.swift */,
 				F87F90C11C96331600B915A1 /* Length.swift */,
 				F87F90C21C96331600B915A1 /* Time.swift */,
+				F856B80B1C98C24C00FC59D7 /* Volume.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		F87F90F21C96506400B915A1 /* Compound */ = {
+			isa = PBXGroup;
+			children = (
+				F87F90F91C96508700B915A1 /* PhysicalUnitKind.swift */,
+				F87F90F41C96506400B915A1 /* CompoundPhysicalUnit.swift */,
+			);
+			path = Compound;
+			sourceTree = "<group>";
+		};
+		F8976ABF1C9CB06400D5F093 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				F8976AC01C9CB06400D5F093 /* AtomicPhysicalUnit.swift */,
+				F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */,
+				F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		F8CA2F2F1C98C18600CC6170 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F856B8081C98C1ED00FC59D7 /* Bag.swift */,
+				F8CA2F301C98C18E00CC6170 /* Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,12 +375,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F856B8091C98C1ED00FC59D7 /* Bag.swift in Sources */,
 				F87F90C81C96331600B915A1 /* Time.swift in Sources */,
-				F87F90C41C96331600B915A1 /* PhysicalUnit.swift in Sources */,
 				F87F90C61C96331600B915A1 /* Angle.swift in Sources */,
+				F8976AC31C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */,
 				F87F90C71C96331600B915A1 /* Length.swift in Sources */,
+				F8CA2F311C98C18E00CC6170 /* Extensions.swift in Sources */,
 				F87F90C51C96331600B915A1 /* PhysicalValue.swift in Sources */,
+				F8976AC71C9CB06400D5F093 /* PhysicalUnit.swift in Sources */,
 				F87F90C31C96331600B915A1 /* MathValue.swift in Sources */,
+				F856B80C1C98C24C00FC59D7 /* Volume.swift in Sources */,
+				F87F90FA1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */,
+				F87F90F71C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */,
+				F8976AC51C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +403,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F856B80A1C98C1ED00FC59D7 /* Bag.swift in Sources */,
 				F87F90E91C96447200B915A1 /* PhysicalValue.swift in Sources */,
 				F87F90EB1C96447200B915A1 /* Length.swift in Sources */,
+				F8976AC41C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */,
 				F87F90EA1C96447200B915A1 /* Angle.swift in Sources */,
 				F87F90E61C96446B00B915A1 /* Time.swift in Sources */,
-				F87F90E81C96447200B915A1 /* PhysicalUnit.swift in Sources */,
+				F8CA2F321C98C18E00CC6170 /* Extensions.swift in Sources */,
+				F8976AC81C9CB06400D5F093 /* PhysicalUnit.swift in Sources */,
 				F87F90E71C96447200B915A1 /* MathValue.swift in Sources */,
+				F856B80D1C98C24C00FC59D7 /* Volume.swift in Sources */,
+				F87F90FB1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */,
+				F87F90F81C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */,
+				F8976AC61C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +700,7 @@
 				F87F90E11C96440000B915A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F87F90E21C96440000B915A1 /* Build configuration list for PBXNativeTarget "PhysicalValueTests_ios" */ = {
 			isa = XCConfigurationList;
@@ -642,6 +709,7 @@
 				F87F90E41C96440000B915A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -55,29 +55,15 @@ public struct Angle: PhysicalValue {
 }
 
 
-public enum AngleUnit: PhysicalUnit {
+public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
+    // Normal is 1 Turn
+
     case Turn
     case Radian
     case Degree
     case Gon
 
-    public var straightAngleValue: MathValue {
-        switch self {
-        case .Turn: return 0.5
-        case .Radian: return M_PI
-        case .Degree: return 180.0
-        case .Gon: return 200.0
-        }
-    }
-
-    public var fullAngleValue: MathValue {
-        switch self {
-        case .Turn: return 1.0
-        case .Radian: return 2.0 * M_PI
-        case .Degree: return 360.0
-        case .Gon: return 400.0
-        }
-    }
+    public var kind: PhysicalUnitKind { return .Angle(self) }
 
     public var fractionOfNormal: MathValue {
         return 1.0 / self.fullAngleValue
@@ -107,6 +93,26 @@ public enum AngleUnit: PhysicalUnit {
         case .Radian: return false
         case .Degree: return false
         case .Gon: return false
+        }
+    }
+
+
+    //MARK: Useful constants
+    public var straightAngleValue: MathValue {
+        switch self {
+        case .Turn: return 0.5
+        case .Radian: return M_PI
+        case .Degree: return 180.0
+        case .Gon: return 200.0
+        }
+    }
+
+    public var fullAngleValue: MathValue {
+        switch self {
+        case .Turn: return 1.0
+        case .Radian: return 2.0 * M_PI
+        case .Degree: return 360.0
+        case .Gon: return 400.0
         }
     }
 }

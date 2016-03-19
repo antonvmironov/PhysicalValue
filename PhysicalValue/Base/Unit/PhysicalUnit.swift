@@ -9,29 +9,29 @@
 import Foundation
 
 
-public protocol PhysicalUnit: Hashable, CustomStringConvertible {
-    var fractionOfNormal: MathValue { get }
+
+public protocol _PhysicalUnit: Hashable, CustomStringConvertible {
+    var kind: PhysicalUnitKind { get }
     var name: String { get }
     var symbol: String { get }
     var wantsSpaceBetweenAmountAndSymbol: Bool { get }
+    var compundPhysicalUnit: CompoundPhysicalUnit { get }
 
-    func normalFromAmount(value: MathValue) -> MathValue
-    func amountFromNormal(normal: MathValue) -> MathValue
-
-    static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue
 }
 
 
+// MARK: -
+public protocol PhysicalUnit: _PhysicalUnit {
+    static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue
+
+    func normalFromAmount(value: MathValue) -> MathValue
+    func amountFromNormal(normal: MathValue) -> MathValue
+    
+}
+
+// MARK: -
 public extension PhysicalUnit {
     var description: String { return self.symbol }
-
-    func normalFromAmount(value: MathValue) -> MathValue {
-        return value * self.fractionOfNormal
-    }
-
-    func amountFromNormal(normal: MathValue) -> MathValue {
-        return normal / self.fractionOfNormal
-    }
 
     static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue {
         guard fromUnit != toUnit else { return fromAmount }

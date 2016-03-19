@@ -8,30 +8,31 @@
 
 import Foundation
 
-
 public struct Length: PhysicalValue {
     public typealias Unit = LengthUnit
 
-    //MARK: Properties - Owned
+    // MARK: Properties - Owned
     public var amount: MathValue
     public var unit: Unit
 
-    //MARK: Properties - Derived
+    // MARK: Properties - Derived
     public var meters: MathValue {
         get { return self.amount(unit: .Metre) }
         set { self.setAmount(newValue, unit: .Metre) }
     }
 
-    //MARK: Initializers
+    // MARK: Initializers
     public init(amount: MathValue, unit: Unit) {
         self.amount = amount
         self.unit = unit
     }
 }
 
+// MARK: -
+public enum LengthUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
+    // Normal is 1 Metre
 
-public enum LengthUnit: PhysicalUnit {
-    // SI
+    // MARK: SI
     case Metre
     case Kilometre
     case Centimetre
@@ -39,17 +40,20 @@ public enum LengthUnit: PhysicalUnit {
     case Micrometre
     case Nanometre
 
-    // Imperial
+    // MARK: Imperial
     case Yard
     case Mile
     case Foot
     case Inch
 
-    // Astronomical
+    // MARK: Astronomical
     case Parsec
     case LightYear
     case LightSecond
     case AstronomicalUnit
+
+    // MARK: -
+    public var kind: PhysicalUnitKind { return .Length(self) }
 
     public var fractionOfNormal: MathValue {
         switch self {
