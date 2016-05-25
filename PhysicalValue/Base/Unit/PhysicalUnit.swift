@@ -8,21 +8,17 @@
 
 import Foundation
 
-public protocol _PhysicalUnit: Hashable, CustomStringConvertible {
+public protocol PhysicalUnit: Hashable, CustomStringConvertible {
   var kind: PhysicalUnitKind { get }
   var name: String { get }
   var symbol: String { get }
   var wantsSpaceBetweenAmountAndSymbol: Bool { get }
   var compundPhysicalUnit: CompoundPhysicalUnit { get }
-}
 
-// MARK: -
-public protocol PhysicalUnit: _PhysicalUnit {
   static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue
   
   func normal(amount: MathValue) -> MathValue
   func amount(normal: MathValue) -> MathValue
-  
 }
 
 public extension PhysicalUnit {

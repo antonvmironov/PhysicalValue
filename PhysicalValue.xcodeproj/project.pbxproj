@@ -35,6 +35,8 @@
 		F8976AC61C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */; };
 		F8976AC71C9CB06400D5F093 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */; };
 		F8976AC81C9CB06400D5F093 /* PhysicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */; };
+		F8C029851CF5C261007B586B /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C029841CF5C261007B586B /* Speed.swift */; };
+		F8C029861CF5C261007B586B /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C029841CF5C261007B586B /* Speed.swift */; };
 		F8CA2F311C98C18E00CC6170 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA2F301C98C18E00CC6170 /* Extensions.swift */; };
 		F8CA2F321C98C18E00CC6170 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA2F301C98C18E00CC6170 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,7 @@
 		F8976AC01C9CB06400D5F093 /* AtomicPhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicPhysicalUnit.swift; sourceTree = "<group>"; };
 		F8976AC11C9CB06400D5F093 /* LinearPhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearPhysicalUnit.swift; sourceTree = "<group>"; };
 		F8976AC21C9CB06400D5F093 /* PhysicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalUnit.swift; sourceTree = "<group>"; };
+		F8C029841CF5C261007B586B /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		F8CA2F301C98C18E00CC6170 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +174,7 @@
 				F87F90C11C96331600B915A1 /* Length.swift */,
 				F87F90C21C96331600B915A1 /* Time.swift */,
 				F856B80B1C98C24C00FC59D7 /* Volume.swift */,
+				F8C029841CF5C261007B586B /* Speed.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -386,6 +390,7 @@
 				F87F90C31C96331600B915A1 /* MathValue.swift in Sources */,
 				F856B80C1C98C24C00FC59D7 /* Volume.swift in Sources */,
 				F87F90FA1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */,
+				F8C029851CF5C261007B586B /* Speed.swift in Sources */,
 				F87F90F71C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */,
 				F8976AC51C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */,
 			);
@@ -414,6 +419,7 @@
 				F87F90E71C96447200B915A1 /* MathValue.swift in Sources */,
 				F856B80D1C98C24C00FC59D7 /* Volume.swift in Sources */,
 				F87F90FB1C96508700B915A1 /* PhysicalUnitKind.swift in Sources */,
+				F8C029861CF5C261007B586B /* Speed.swift in Sources */,
 				F87F90F81C96506400B915A1 /* CompoundPhysicalUnit.swift in Sources */,
 				F8976AC61C9CB06400D5F093 /* LinearPhysicalUnit.swift in Sources */,
 			);

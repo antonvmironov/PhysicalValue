@@ -41,7 +41,7 @@ public enum VolumeUnit: PhysicalUnit {
   
   public var symbol: String {
     switch self {
-    case .cubeOfLength: return "m"
+    case let .cubeOfLength(lengthUnit): return "\(lengthUnit.symbol)\u{00B3}"
     case .liter: return "l"
     }
   }
@@ -61,25 +61,21 @@ public enum VolumeUnit: PhysicalUnit {
         return .metre
       }
     }
-    let kinds = Bag(valuesAndCounts: (PhysicalUnitKind.length(lengthUnit), 3))
+    let kinds = Bag(valuesAndCounts: (lengthUnit.kind, 3))
     return CompoundPhysicalUnit(kinds: kinds)
   }
   
   public func normal(amount: MathValue) -> MathValue {
     switch self {
-    case let .cubeOfLength(lengthUnit):
-      return pow(lengthUnit.normal(amount: pow(amount, 1.0 / 3.0)), 3.0)
-    case .liter:
-      return amount / 1000.0
+    case .cubeOfLength: return self.compundPhysicalUnit.normal(amount: amount)
+    case .liter: return amount / 1000.0
     }
   }
   
   public func amount(normal: MathValue) -> MathValue {
     switch self {
-    case let .cubeOfLength(lengthUnit):
-      return pow(lengthUnit.amount(normal: pow(normal, 1.0 / 3.0)), 3.0)
-    case .liter:
-      return normal * 1000.0
+    case .cubeOfLength: return self.compundPhysicalUnit.amount(normal: normal)
+    case .liter: return normal * 1000.0
     }
   }
 }

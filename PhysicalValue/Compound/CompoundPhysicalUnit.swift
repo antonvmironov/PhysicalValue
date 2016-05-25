@@ -6,7 +6,9 @@
 //  Copyright © 2016 Anton Mironov. All rights reserved.
 //
 
-public struct CompoundPhysicalUnit: _PhysicalUnit {
+import Foundation
+
+public struct CompoundPhysicalUnit: PhysicalUnit {
   public var kinds: Bag<PhysicalUnitKind>
   
   public var kind: PhysicalUnitKind { return .compound(self) }
@@ -45,6 +47,32 @@ public struct CompoundPhysicalUnit: _PhysicalUnit {
   
   public var wantsSpaceBetweenAmountAndSymbol: Bool { return true }
   public var compundPhysicalUnit: CompoundPhysicalUnit { return self }
+  
+  public func normal(amount: MathValue) -> MathValue {
+    var result = amount
+    
+    let kinsAndExponents = self.kinds.map { $0 }.sorted { $0.counter > $1.counter }
+    for (kind, exponent) in kinsAndExponents {
+      result = safePow(base: result, exponent: 1.0 / Double(exponent))
+      result = kind.normal(amount: result)
+      result = safePow(base: result, exponent: Double(exponent))
+    }
+
+    return result
+  }
+
+  public func amount(normal: MathValue) -> MathValue {
+    var result = normal
+    
+    let kinsAndExponents = self.kinds.map { $0 }.sorted { $0.counter > $1.counter }
+    for (kind, exponent) in kinsAndExponents {
+      result = safePow(base: result, exponent: 1.0 / Double(exponent))
+      result = kind.amount(normal: result)
+      result = safePow(base: result, exponent: Double(exponent))
+    }
+    
+    return result
+  }
 }
 
 public func ==(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> Bool {

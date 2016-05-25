@@ -61,6 +61,24 @@ public enum PhysicalUnitKind: Hashable {
     case let .compound(unit): return unit.symbol
     }
   }
+  
+  public func normal(amount: MathValue) -> MathValue {
+    switch self {
+    case let .angle(unit): return unit.normal(amount: amount)
+    case let .length(unit): return unit.normal(amount: amount)
+    case let .time(unit): return unit.normal(amount: amount)
+    case let .compound(unit): return unit.normal(amount: amount)
+    }
+  }
+  
+  public func amount(normal: MathValue) -> MathValue {
+    switch self {
+    case let .angle(unit): return unit.amount(normal: normal)
+    case let .length(unit): return unit.amount(normal: normal)
+    case let .time(unit): return unit.amount(normal: normal)
+    case let .compound(unit): return unit.amount(normal: normal)
+    }
+  }
 }
 
 public func == (lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> Bool {

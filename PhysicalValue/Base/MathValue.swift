@@ -20,3 +20,8 @@ public extension MathValue {
     return T(amount: self, unit: unit)
   }
 }
+
+func safePow(base: MathValue, exponent: MathValue) -> MathValue {
+  guard !isEqual(1.0, exponent) && !isEqual(0.0, base) else { return base }
+  return pow(base, exponent)
+}
