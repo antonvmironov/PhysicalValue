@@ -8,18 +8,15 @@
 
 import Foundation
 
-
 public typealias MathValue = Double
 
-
-public func isEqual(lhs: MathValue, rhs: MathValue) -> Bool {
+public func isEqual(_ lhs: MathValue,_ rhs: MathValue) -> Bool {
     //TODO: check doubles appropriately
     return lhs == rhs
 }
 
-
 public extension MathValue {
-    func of<T: PhysicalValue>(unit: T.Unit) -> T {
+    func of<T: PhysicalValue>(_ unit: T.Unit) -> T {
         return T(amount: self, unit: unit)
     }
 }

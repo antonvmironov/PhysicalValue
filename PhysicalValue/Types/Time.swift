@@ -17,8 +17,8 @@ public struct Time: PhysicalValue {
 
     //MARK: Properties - Derived
     public var seconds: MathValue {
-        get { return self.amount(unit: .Second) }
-        set { self.setAmount(newValue, unit: .Second) }
+        get { return self.amount(unit: .second) }
+        set { self.setAmount(newValue, unit: .second) }
     }
 
     //MARK: Initializers
@@ -32,66 +32,66 @@ public struct Time: PhysicalValue {
 public enum TimeUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
     // Normal is 1 Second
 
-    case Year
-    case Day
-    case Hour
-    case Minute
-    case Second
-    case Millisecond
-    case Microsecond
-    case Nanosecond
+    case year
+    case day
+    case hour
+    case minute
+    case second
+    case millisecond
+    case microsecond
+    case nanosecond
 
-    public var kind: PhysicalUnitKind { return .Time(self) }
+    public var kind: PhysicalUnitKind { return .time(self) }
 
     public var fractionOfNormal: MathValue {
         switch self {
-        case .Year: return 365.0 * 60.0 * 60.0
-        case .Day: return 24.0 * 60.0 * 60.0
-        case .Hour: return 60.0 * 60.0
-        case .Minute: return 60.0
-        case .Second: return 1.0
-        case .Millisecond: return 1.0 / pow(10.0, -3.0)
-        case .Microsecond: return 1.0 / pow(10.0, -6.0)
-        case .Nanosecond: return 1.0 / pow(10.0, -9.0)
+        case .year: return 365.0 * 60.0 * 60.0
+        case .day: return 24.0 * 60.0 * 60.0
+        case .hour: return 60.0 * 60.0
+        case .minute: return 60.0
+        case .second: return 1.0
+        case .millisecond: return 1.0 / pow(10.0, -3.0)
+        case .microsecond: return 1.0 / pow(10.0, -6.0)
+        case .nanosecond: return 1.0 / pow(10.0, -9.0)
         }
     }
 
     public var name: String {
         switch self {
-        case .Year: return "year"
-        case .Day: return "day"
-        case .Hour: return "hour"
-        case .Minute: return "minute"
-        case .Second: return "second"
-        case .Millisecond: return "millisecond"
-        case .Microsecond: return "microsecond"
-        case .Nanosecond: return "nanosecond"
+        case .year: return "year"
+        case .day: return "day"
+        case .hour: return "hour"
+        case .minute: return "minute"
+        case .second: return "second"
+        case .millisecond: return "millisecond"
+        case .microsecond: return "microsecond"
+        case .nanosecond: return "nanosecond"
         }
     }
 
     public var symbol: String {
         switch self {
-        case .Year: return "year"
-        case .Day: return "day"
-        case .Hour: return "hour"
-        case .Minute: return "minute"
-        case .Second: return "s"
-        case .Millisecond: return "ms"
-        case .Microsecond: return "\u{03BC}s"
-        case .Nanosecond: return "ns"
+        case .year: return "year"
+        case .day: return "day"
+        case .hour: return "hour"
+        case .minute: return "minute"
+        case .second: return "s"
+        case .millisecond: return "ms"
+        case .microsecond: return "\u{03BC}s"
+        case .nanosecond: return "ns"
         }
     }
 
     public var wantsSpaceBetweenAmountAndSymbol: Bool {
         switch self {
-        case .Year: return true
-        case .Day: return true
-        case .Hour: return true
-        case .Minute: return true
-        case .Second: return false
-        case .Millisecond: return false
-        case .Microsecond: return false
-        case .Nanosecond: return false
+        case .year: return true
+        case .day: return true
+        case .hour: return true
+        case .minute: return true
+        case .second: return false
+        case .millisecond: return false
+        case .microsecond: return false
+        case .nanosecond: return false
         }
     }
 }

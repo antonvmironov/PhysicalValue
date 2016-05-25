@@ -8,12 +8,7 @@
 
 import Foundation
 
-
-public protocol AtomicPhysicalUnit: PhysicalUnit {
-
-}
-
-
+public protocol AtomicPhysicalUnit: PhysicalUnit { }
 
 public extension AtomicPhysicalUnit {
     var compundPhysicalUnit: CompoundPhysicalUnit { return CompoundPhysicalUnit(kinds: [self.kind]) }

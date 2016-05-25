@@ -18,18 +18,18 @@ public struct Angle: PhysicalValue {
 
     //MARK: Properties - Derived
     public var turns: Double {
-        get { return self.amount(unit: .Turn) }
-        set { self.setAmount(newValue, unit: .Turn) }
+        get { return self.amount(unit: .turn) }
+        set { self.setAmount(newValue, unit: .turn) }
     }
 
     public var radians: Double {
-        get { return self.amount(unit: .Radian) }
-        set { self.setAmount(newValue, unit: .Radian) }
+        get { return self.amount(unit: .radian) }
+        set { self.setAmount(newValue, unit: .radian) }
     }
 
     public var degrees: Double {
-        get { return self.amount(unit: .Degree) }
-        set { self.setAmount(newValue, unit: .Degree) }
+        get { return self.amount(unit: .degree) }
+        set { self.setAmount(newValue, unit: .degree) }
     }
 
     //MARK: Initializers
@@ -40,17 +40,17 @@ public struct Angle: PhysicalValue {
 
     public init(turns: MathValue) {
         self.amount = turns
-        self.unit = .Turn
+        self.unit = .turn
     }
 
     public init(radians: MathValue) {
         self.amount = radians
-        self.unit = .Radian
+        self.unit = .radian
     }
 
     public init(degrees: MathValue) {
         self.amount = degrees
-        self.unit = .Degree
+        self.unit = .degree
     }
 }
 
@@ -58,12 +58,12 @@ public struct Angle: PhysicalValue {
 public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
     // Normal is 1 Turn
 
-    case Turn
-    case Radian
-    case Degree
-    case Gon
+    case turn
+    case radian
+    case degree
+    case gon
 
-    public var kind: PhysicalUnitKind { return .Angle(self) }
+    public var kind: PhysicalUnitKind { return .angle(self) }
 
     public var fractionOfNormal: MathValue {
         return 1.0 / self.fullAngleValue
@@ -71,28 +71,28 @@ public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
 
     public var name: String {
         switch self {
-        case .Turn: return "turn"
-        case .Radian: return "radian"
-        case .Degree: return "degree"
-        case .Gon: return "gradian"
+        case .turn: return "turn"
+        case .radian: return "radian"
+        case .degree: return "degree"
+        case .gon: return "gradian"
         }
     }
 
     public var symbol: String {
         switch self {
-        case .Turn: return "turns"
-        case .Radian: return "\u{33AD}"
-        case .Degree: return "\u{00B0}"
-        case .Gon: return "\u{1D4D}"
+        case .turn: return "turns"
+        case .radian: return "\u{33AD}"
+        case .degree: return "\u{00B0}"
+        case .gon: return "\u{1D4D}"
         }
     }
 
     public var wantsSpaceBetweenAmountAndSymbol: Bool {
         switch self {
-        case .Turn: return true
-        case .Radian: return false
-        case .Degree: return false
-        case .Gon: return false
+        case .turn: return true
+        case .radian: return false
+        case .degree: return false
+        case .gon: return false
         }
     }
 
@@ -100,19 +100,19 @@ public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
     //MARK: Useful constants
     public var straightAngleValue: MathValue {
         switch self {
-        case .Turn: return 0.5
-        case .Radian: return M_PI
-        case .Degree: return 180.0
-        case .Gon: return 200.0
+        case .turn: return 0.5
+        case .radian: return M_PI
+        case .degree: return 180.0
+        case .gon: return 200.0
         }
     }
 
     public var fullAngleValue: MathValue {
         switch self {
-        case .Turn: return 1.0
-        case .Radian: return 2.0 * M_PI
-        case .Degree: return 360.0
-        case .Gon: return 400.0
+        case .turn: return 1.0
+        case .radian: return 2.0 * M_PI
+        case .degree: return 360.0
+        case .gon: return 400.0
         }
     }
 }

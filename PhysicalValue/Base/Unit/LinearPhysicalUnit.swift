@@ -13,13 +13,12 @@ public protocol LinearPhysicalUnit: PhysicalUnit {
     var fractionOfNormal: MathValue { get }
 }
 
-
 public extension LinearPhysicalUnit {
-    func normalFromAmount(value: MathValue) -> MathValue {
-        return value * self.fractionOfNormal
+    func normal(amount: MathValue) -> MathValue {
+        return amount * self.fractionOfNormal
     }
 
-    func amountFromNormal(normal: MathValue) -> MathValue {
+    func amount(normal: MathValue) -> MathValue {
         return normal / self.fractionOfNormal
     }
 }

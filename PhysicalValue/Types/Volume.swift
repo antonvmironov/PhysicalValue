@@ -26,59 +26,59 @@ public struct Volume: PhysicalValue {
 public enum VolumeUnit: PhysicalUnit {
     // Normal is 1 Metre³
 
-    case CubeOfLength(LengthUnit)
-    case Liter
+    case cubeOfLength(LengthUnit)
+    case liter
 
-    public var kind: PhysicalUnitKind { return .Compound(self.compundPhysicalUnit) }
+    public var kind: PhysicalUnitKind { return .compound(self.compundPhysicalUnit) }
     public var hashValue: Int { return self.name.hashValue }
 
     public var name: String {
         switch self {
-        case let .CubeOfLength(lengthUnit): return "\(lengthUnit.name)\u{00B3}"
-        case .Liter: return "liter"
+        case let .cubeOfLength(lengthUnit): return "\(lengthUnit.name)\u{00B3}"
+        case .liter: return "liter"
         }
     }
 
     public var symbol: String {
         switch self {
-        case .CubeOfLength: return "m"
-        case .Liter: return "l"
+        case .cubeOfLength: return "m"
+        case .liter: return "l"
         }
     }
 
     public var wantsSpaceBetweenAmountAndSymbol: Bool {
         switch self {
-        case .CubeOfLength: return false
-        case .Liter: return false
+        case .cubeOfLength: return false
+        case .liter: return false
         }
     }
 
     public var compundPhysicalUnit: CompoundPhysicalUnit {
         let lengthUnit: LengthUnit = eval {
-            if case let .CubeOfLength(lengthUnit) = self {
+            if case let .cubeOfLength(lengthUnit) = self {
                 return lengthUnit
             } else {
-                return .Metre
+                return .metre
             }
         }
-        let kinds = Bag(valuesAndCounts: (PhysicalUnitKind.Length(lengthUnit), 3))
+        let kinds = Bag(valuesAndCounts: (PhysicalUnitKind.length(lengthUnit), 3))
         return CompoundPhysicalUnit(kinds: kinds)
     }
 
-    public func normalFromAmount(value: MathValue) -> MathValue {
+    public func normal(amount: MathValue) -> MathValue {
         switch self {
-        case let .CubeOfLength(lengthUnit):
-            return pow(lengthUnit.normalFromAmount(pow(value, 1.0 / 3.0)), 3.0)
-        case .Liter:
-            return value / 1000.0
+        case let .cubeOfLength(lengthUnit):
+            return pow(lengthUnit.normal(amount: pow(amount, 1.0 / 3.0)), 3.0)
+        case .liter:
+            return amount / 1000.0
         }
     }
 
-    public func amountFromNormal(normal: MathValue) -> MathValue {
+    public func amount(normal: MathValue) -> MathValue {
         switch self {
-        case let .CubeOfLength(lengthUnit):
-            return pow(lengthUnit.amountFromNormal(pow(normal, 1.0 / 3.0)), 3.0)
-        case .Liter:
+        case let .cubeOfLength(lengthUnit):
+            return pow(lengthUnit.amount(normal: pow(normal, 1.0 / 3.0)), 3.0)
+        case .liter:
             return normal * 1000.0
         }
     }
@@ -86,11 +86,11 @@ public enum VolumeUnit: PhysicalUnit {
 
 public func ==(lhs: VolumeUnit, rhs: VolumeUnit) -> Bool {
     switch lhs {
-    case let .CubeOfLength(leftUnit):
-        if case let .CubeOfLength(rightUnit) = rhs { return leftUnit == rightUnit }
+    case let .cubeOfLength(leftUnit):
+        if case let .cubeOfLength(rightUnit) = rhs { return leftUnit == rightUnit }
         else { return false }
-    case .Liter:
-        if case .Liter = rhs { return true }
+    case .liter:
+        if case .liter = rhs { return true }
         else { return false }
     }
 }

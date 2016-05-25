@@ -17,8 +17,8 @@ public struct Length: PhysicalValue {
 
     // MARK: Properties - Derived
     public var meters: MathValue {
-        get { return self.amount(unit: .Metre) }
-        set { self.setAmount(newValue, unit: .Metre) }
+        get { return self.amount(unit: .metre) }
+        set { self.setAmount(newValue, unit: .metre) }
     }
 
     // MARK: Initializers
@@ -33,116 +33,116 @@ public enum LengthUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
     // Normal is 1 Metre
 
     // MARK: SI
-    case Metre
-    case Kilometre
-    case Centimetre
-    case Millimetre
-    case Micrometre
-    case Nanometre
+    case metre
+    case kilometre
+    case centimetre
+    case millimetre
+    case micrometre
+    case nanometre
 
     // MARK: Imperial
-    case Yard
-    case Mile
-    case Foot
-    case Inch
+    case yard
+    case mile
+    case foot
+    case inch
 
     // MARK: Astronomical
-    case Parsec
-    case LightYear
-    case LightSecond
-    case AstronomicalUnit
+    case parsec
+    case lightYear
+    case lightSecond
+    case astronomicalUnit
 
     // MARK: -
-    public var kind: PhysicalUnitKind { return .Length(self) }
+    public var kind: PhysicalUnitKind { return .length(self) }
 
     public var fractionOfNormal: MathValue {
         switch self {
-        case .Metre: return 1.0
-        case .Kilometre: return 1000.0
-        case .Centimetre: return 0.01
-        case .Millimetre: return pow(1.0, -3.0)
-        case .Micrometre: return pow(1.0, -6.0)
-        case .Nanometre: return pow(1.0, -9.0)
+        case .metre: return 1.0
+        case .kilometre: return 1000.0
+        case .centimetre: return 0.01
+        case .millimetre: return pow(1.0, -3.0)
+        case .micrometre: return pow(1.0, -6.0)
+        case .nanometre: return pow(1.0, -9.0)
 
-        case .Yard: return LengthUnit.yardInMeters
-        case .Mile: return LengthUnit.yardInMeters * 1760.0
-        case .Foot: return LengthUnit.yardInMeters / 3.0
-        case .Inch: return LengthUnit.yardInMeters / 36.0
+        case .yard: return LengthUnit.yardInMeters
+        case .mile: return LengthUnit.yardInMeters * 1760.0
+        case .foot: return LengthUnit.yardInMeters / 3.0
+        case .inch: return LengthUnit.yardInMeters / 36.0
 
-        case .Parsec: return LengthUnit.parsecInMeters
-        case .LightYear: return LengthUnit.lightYearInMeters
-        case .LightSecond: return LengthUnit.lightSecondInMeters
-        case .AstronomicalUnit: return LengthUnit.astronomicalUnitInMeters
+        case .parsec: return LengthUnit.parsecInMeters
+        case .lightYear: return LengthUnit.lightYearInMeters
+        case .lightSecond: return LengthUnit.lightSecondInMeters
+        case .astronomicalUnit: return LengthUnit.astronomicalUnitInMeters
         }
     }
 
     public var name: String {
         switch self {
-        case .Metre: return "metre"
-        case .Kilometre: return "kilometre"
-        case .Centimetre: return "centimetre"
-        case .Millimetre: return "millimetre"
-        case .Micrometre: return "micrometre"
-        case .Nanometre: return "nanometre"
+        case .metre: return "metre"
+        case .kilometre: return "kilometre"
+        case .centimetre: return "centimetre"
+        case .millimetre: return "millimetre"
+        case .micrometre: return "micrometre"
+        case .nanometre: return "nanometre"
 
-        case .Yard: return "yard"
-        case .Mile: return "mile"
-        case .Foot: return "foot"
-        case .Inch: return "inch"
+        case .yard: return "yard"
+        case .mile: return "mile"
+        case .foot: return "foot"
+        case .inch: return "inch"
 
-        case .Parsec: return "parsec"
-        case .LightYear: return "light year"
-        case .LightSecond: return "light second"
-        case .AstronomicalUnit: return "Astronomical Unit"
+        case .parsec: return "parsec"
+        case .lightYear: return "light year"
+        case .lightSecond: return "light second"
+        case .astronomicalUnit: return "Astronomical Unit"
         }
     }
 
     public var symbol: String {
         switch self {
-        case .Metre: return "m"
-        case .Kilometre: return "km"
-        case .Centimetre: return "cm"
-        case .Millimetre: return "mm"
-        case .Micrometre: return "\u{03BC}m"
-        case .Nanometre: return "nm"
+        case .metre: return "m"
+        case .kilometre: return "km"
+        case .centimetre: return "cm"
+        case .millimetre: return "mm"
+        case .micrometre: return "\u{03BC}m"
+        case .nanometre: return "nm"
 
-        case .Yard: return "yd"
-        case .Mile: return "mi"
-        case .Foot: return "ft"
-        case .Inch: return "in"
+        case .yard: return "yd"
+        case .mile: return "mi"
+        case .foot: return "ft"
+        case .inch: return "in"
 
-        case .Parsec: return "parsec"
-        case .LightYear: return "light year"
-        case .LightSecond: return "light second"
-        case .AstronomicalUnit: return "AU"
+        case .parsec: return "parsec"
+        case .lightYear: return "light year"
+        case .lightSecond: return "light second"
+        case .astronomicalUnit: return "AU"
         }
     }
 
     public var wantsSpaceBetweenAmountAndSymbol: Bool {
         switch self {
-        case .Metre: return false
-        case .Kilometre: return false
-        case .Centimetre: return false
-        case .Millimetre: return false
-        case .Micrometre: return false
-        case .Nanometre: return false
+        case .metre: return false
+        case .kilometre: return false
+        case .centimetre: return false
+        case .millimetre: return false
+        case .micrometre: return false
+        case .nanometre: return false
 
-        case .Yard: return false
-        case .Mile: return false
-        case .Foot: return false
-        case .Inch: return false
+        case .yard: return false
+        case .mile: return false
+        case .foot: return false
+        case .inch: return false
 
-        case .Parsec: return true
-        case .LightYear: return true
-        case .LightSecond: return true
-        case .AstronomicalUnit: return false
+        case .parsec: return true
+        case .lightYear: return true
+        case .lightSecond: return true
+        case .astronomicalUnit: return false
         }
     }
 
     //MARK: Meta
     private static let astronomicalUnitInMeters: MathValue = 149_597_870_700.0
     private static let lightSecondInMeters: MathValue = 299_792_458.0
-    private static let lightYearInMeters: MathValue = LengthUnit.lightSecondInMeters * Time(amount: 1.0, unit: .Year).seconds
+    private static let lightYearInMeters: MathValue = LengthUnit.lightSecondInMeters * Time(amount: 1.0, unit: .year).seconds
     private static let parsecInMeters = (648_000.0 / M_PI) * LengthUnit.astronomicalUnitInMeters
     private static let yardInMeters: MathValue = 0.9144
 }

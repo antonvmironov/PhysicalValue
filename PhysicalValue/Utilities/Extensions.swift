@@ -6,12 +6,12 @@
 //  Copyright © 2016 Anton Mironov. All rights reserved.
 //
 
-public func eval<T>(@noescape block: (Void) throws -> T) rethrows -> T {
+public func eval<T>(block: @noescape (Void) throws -> T) rethrows -> T {
     return try block()
 }
 
 // MARK: -
-public extension CollectionType where Generator.Element: Hashable {
+public extension Collection where Iterator.Element: Hashable {
     var hashValue: Int {
         var counter = 100
         var accumulator = 0
@@ -54,22 +54,22 @@ extension Dictionary: Unitable {
     @warn_unused_result
     public func union(other: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
         var result = Dictionary<Key, Value>(minimumCapacity: self.count + other.count)
-        result.unionInPlace(self)
-        result.unionInPlace(other)
+        result.unionInPlace(other: self)
+        result.unionInPlace(other: other)
         return result
     }
 }
 
-public func +=<U: Unitable>(inout lhs: U, rhs: U) {
-    lhs.unionInPlace(rhs)
+public func +=<U: Unitable>(lhs: inout U, rhs: U) {
+    lhs.unionInPlace(other: rhs)
 }
 
 public func +<U: Unitable>(lhs: U, rhs: U) -> U {
-    return lhs.union(rhs)
+    return lhs.union(other: rhs)
 }
 
 // MARK: -
-func rotl(value: Int, _ shift: Int) -> Int {
+func rotl(_ value: Int, _ shift: Int) -> Int {
     let numberOfBits = sizeof(Int) * 8
     let leftShift = shift % numberOfBits
     let rightShift = (numberOfBits - leftShift) % numberOfBits

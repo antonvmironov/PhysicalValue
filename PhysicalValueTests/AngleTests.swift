@@ -13,101 +13,101 @@ import XCTest
 
 class AngleTests: XCTestCase {
 
-    func testTurnsBasedInit() {
+    func testturnsBasedInit() {
         do {
-            let angle = Angle(amount: 1.0, unit: .Turn)
+            let angle = Angle(amount: 1.0, unit: .turn)
             XCTAssertEqual(angle.amount, 1.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Turn)
+            XCTAssertEqual(angle.unit, Angle.Unit.turn)
         }
 
         do {
             let angle = Angle(turns: 1.0)
             XCTAssertEqual(angle.amount, 1.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Turn)
+            XCTAssertEqual(angle.unit, Angle.Unit.turn)
         }
 
         do {
-            let angle: Angle = 1.0.of(.Turn)
+            let angle: Angle = 1.0.of(.turn)
             XCTAssertEqual(angle.amount, 1.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Turn)
+            XCTAssertEqual(angle.unit, Angle.Unit.turn)
         }
 
         do {
-            let angle: Angle = 1.0 * .Turn
+            let angle: Angle = 1.0 * .turn
             XCTAssertEqual(angle.amount, 1.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Turn)
+            XCTAssertEqual(angle.unit, Angle.Unit.turn)
         }
     }
     
-    func testRadiansBasedInit() {
+    func testradiansBasedInit() {
         do {
-            let angle = Angle(amount: M_PI, unit: .Radian)
+            let angle = Angle(amount: M_PI, unit: .radian)
             XCTAssertEqual(angle.amount, M_PI)
-            XCTAssertEqual(angle.unit, Angle.Unit.Radian)
+            XCTAssertEqual(angle.unit, Angle.Unit.radian)
         }
 
         do {
             let angle = Angle(radians: M_PI)
             XCTAssertEqual(angle.amount, M_PI)
-            XCTAssertEqual(angle.unit, Angle.Unit.Radian)
+            XCTAssertEqual(angle.unit, Angle.Unit.radian)
         }
 
         do {
-            let angle: Angle = M_PI.of(.Radian)
+            let angle: Angle = M_PI.of(.radian)
             XCTAssertEqual(angle.amount, M_PI)
-            XCTAssertEqual(angle.unit, Angle.Unit.Radian)
+            XCTAssertEqual(angle.unit, Angle.Unit.radian)
         }
 
         do {
-            let angle: Angle = M_PI * .Radian
+            let angle: Angle = M_PI * .radian
             XCTAssertEqual(angle.amount, M_PI)
-            XCTAssertEqual(angle.unit, Angle.Unit.Radian)
+            XCTAssertEqual(angle.unit, Angle.Unit.radian)
         }
     }
     
-    func testDegreesBasedInit() {
+    func testdegreesBasedInit() {
         do {
-            let angle = Angle(amount: 90.0, unit: .Degree)
+            let angle = Angle(amount: 90.0, unit: .degree)
             XCTAssertEqual(angle.amount, 90.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Degree)
+            XCTAssertEqual(angle.unit, Angle.Unit.degree)
         }
 
         do {
             let angle = Angle(degrees: 90.0)
             XCTAssertEqual(angle.amount, 90.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Degree)
+            XCTAssertEqual(angle.unit, Angle.Unit.degree)
         }
 
         do {
-            let angle: Angle = 90.0.of(.Degree)
+            let angle: Angle = 90.0.of(.degree)
             XCTAssertEqual(angle.amount, 90.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Degree)
+            XCTAssertEqual(angle.unit, Angle.Unit.degree)
         }
 
         do {
-            let angle: Angle = 90.0 * .Degree
+            let angle: Angle = 90.0 * .degree
             XCTAssertEqual(angle.amount, 90.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Degree)
+            XCTAssertEqual(angle.unit, Angle.Unit.degree)
         }
     }
     
-    func testGonsBasedInit() {
+    func testgonsBasedInit() {
         do {
-            let angle = Angle(amount: 100.0, unit: .Gon)
+            let angle = Angle(amount: 100.0, unit: .gon)
             XCTAssertEqual(angle.amount, 100.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Gon)
+            XCTAssertEqual(angle.unit, Angle.Unit.gon)
         }
 
         do {
-            let angle: Angle = 100.0.of(.Gon)
+            let angle: Angle = 100.0.of(.gon)
             XCTAssertEqual(angle.amount, 100.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Gon)
+            XCTAssertEqual(angle.unit, Angle.Unit.gon)
         }
 
         do {
-            let angle: Angle = 100.0 * .Gon
+            let angle: Angle = 100.0 * .gon
             XCTAssertEqual(angle.amount, 100.0)
-            XCTAssertEqual(angle.unit, Angle.Unit.Gon)
+            XCTAssertEqual(angle.unit, Angle.Unit.gon)
         }
     }
     
@@ -115,7 +115,7 @@ class AngleTests: XCTestCase {
         let turnsAngle = Angle(turns: 0.5)
         let radiansAngle = Angle(radians: M_PI)
         let degreesAngle = Angle(degrees: 180.0)
-        let gonsAngle = Angle(amount: 200.0, unit: .Gon)
+        let gonsAngle = Angle(amount: 200.0, unit: .gon)
 
         XCTAssertEqual(turnsAngle, radiansAngle)
         XCTAssertEqual(radiansAngle, degreesAngle)
@@ -124,8 +124,8 @@ class AngleTests: XCTestCase {
     }
 
     func testTransform() {
-        let knownUnits: [Angle.Unit] = [ .Turn, .Radian, .Degree, .Gon ]
-        let angles: [Angle] = [ 0.25 * .Turn, M_PI_2 * .Radian, 90.0 * .Degree, 100.0 * .Gon ]
+        let knownUnits: [Angle.Unit] = [ .turn, .radian, .degree, .gon ]
+        let angles: [Angle] = [ 0.25 * .turn, M_PI_2 * .radian, 90.0 * .degree, 100.0 * .gon ]
 
         for leftAngle in angles {
             for rightAngle in angles {
@@ -141,7 +141,7 @@ class AngleTests: XCTestCase {
 
             for unit in knownUnits {
                 var newAngle = angle
-                newAngle.changeUnits(unit)
+                newAngle.change(toUnit: unit)
                 XCTAssertEqual(newAngle.amount, angle.amount(unit: unit))
             }
         }

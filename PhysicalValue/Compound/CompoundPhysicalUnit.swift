@@ -9,7 +9,7 @@
 public struct CompoundPhysicalUnit: _PhysicalUnit {
     public var kinds: Bag<PhysicalUnitKind>
 
-    public var kind: PhysicalUnitKind { return .Compound(self) }
+    public var kind: PhysicalUnitKind { return .compound(self) }
 
     public var hashValue: Int { return self.kind.hashValue }
 
@@ -20,7 +20,7 @@ public struct CompoundPhysicalUnit: _PhysicalUnit {
             + exportableKindsAndExponents.positiveExponent.map { $0.description }
             + exportableKindsAndExponents.negativeExponent.map { $0.description }
 
-        return components.joinWithSeparator("\u{00D7}")
+        return components.joined(separator: "\u{00D7}")
     }
 
     public var name: String {
@@ -30,7 +30,7 @@ public struct CompoundPhysicalUnit: _PhysicalUnit {
             + exportableKindsAndExponents.positiveExponent.map { $0.name }
             + exportableKindsAndExponents.negativeExponent.map { $0.name }
 
-        return components.joinWithSeparator("\u{00D7}")
+        return components.joined(separator: "\u{00D7}")
     }
 
     public var symbol: String {
@@ -40,7 +40,7 @@ public struct CompoundPhysicalUnit: _PhysicalUnit {
             + exportableKindsAndExponents.positiveExponent.map { $0.symbol }
             + exportableKindsAndExponents.negativeExponent.map { $0.symbol }
 
-        return components.joinWithSeparator("\u{00D7}")
+        return components.joined(separator: "\u{00D7}")
     }
 
     public var wantsSpaceBetweenAmountAndSymbol: Bool { return true }
@@ -69,16 +69,16 @@ private extension CompoundPhysicalUnit {
         var kind: PhysicalUnitKind
         var exponent: Int
         var description: String {
-            return "\(self.kind.descriptionOfUnit)\(self.stringFromExponent(self.exponent))"
+            return "\(self.kind.descriptionOfUnit)\(self.string(fromExponent: self.exponent))"
         }
         var name: String {
-            return "\(self.kind.nameOfUnit)\(self.stringFromExponent(self.exponent))"
+            return "\(self.kind.nameOfUnit)\(self.string(fromExponent: self.exponent))"
         }
         var symbol: String {
-            return "\(self.kind.symbolOfUnit)\(self.stringFromExponent(self.exponent))"
+            return "\(self.kind.symbolOfUnit)\(self.string(fromExponent: self.exponent))"
         }
 
-        func stringFromExponent(exponent: Int) -> String {
+        func string(fromExponent exponent: Int) -> String {
             guard 0 != exponent else { return String(Constants.digits[0]) }
 
             var exponentLeft = exponent
@@ -118,8 +118,8 @@ private extension CompoundPhysicalUnit {
             }
         }
 
-        positiveExponentKinds.sortInPlace(isOrderedBefore)
-        negativeExponentKinds.sortInPlace(isOrderedBefore)
+        positiveExponentKinds.sort(isOrderedBefore: isOrderedBefore)
+        negativeExponentKinds.sort(isOrderedBefore: isOrderedBefore)
         return (positiveExponentKinds, negativeExponentKinds)
     }
 }
@@ -128,10 +128,10 @@ private extension CompoundPhysicalUnit {
 private extension PhysicalUnitKind {
     var stringExportingPriority: Int {
         switch self {
-        case .Angle: return 5
-        case .Length: return 10
-        case .Time: return 1
-        case .Compound: return 0
+        case .angle: return 5
+        case .length: return 10
+        case .time: return 1
+        case .compound: return 0
         }
     }
 

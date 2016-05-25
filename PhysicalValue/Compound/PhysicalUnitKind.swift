@@ -9,26 +9,26 @@
 public enum PhysicalUnitKind: Hashable {
 
     // MARK: Atomics
-    case Angle(AngleUnit)
-    case Length(LengthUnit)
-    case Time(TimeUnit)
+    case angle(AngleUnit)
+    case length(LengthUnit)
+    case time(TimeUnit)
 
     // MARK: Compound
     // No need to add more compound units here. Express them in .Compound of atomics instead of adding.
-    case Compound(CompoundPhysicalUnit)
+    case compound(CompoundPhysicalUnit)
 
     // MARK: Methods
     public var hashValue: Int {
         switch self {
-        case let .Angle(unit): return unit.hashValue
-        case let .Length(unit): return unit.hashValue
-        case let .Time(unit): return unit.hashValue
-        case let .Compound(unit): return unit.hashValue
+        case let .angle(unit): return unit.hashValue
+        case let .length(unit): return unit.hashValue
+        case let .time(unit): return unit.hashValue
+        case let .compound(unit): return unit.hashValue
         }
     }
 
     public var comoundPhysicalUnit: CompoundPhysicalUnit {
-        if case let .Compound(unit) = self {
+        if case let .compound(unit) = self {
             return unit
         } else {
             return CompoundPhysicalUnit(kinds: [self])
@@ -37,45 +37,45 @@ public enum PhysicalUnitKind: Hashable {
 
     public var descriptionOfUnit: String {
         switch self {
-        case let .Angle(unit): return unit.description
-        case let .Length(unit): return unit.description
-        case let .Time(unit): return unit.description
-        case let .Compound(unit): return unit.description
+        case let .angle(unit): return unit.description
+        case let .length(unit): return unit.description
+        case let .time(unit): return unit.description
+        case let .compound(unit): return unit.description
         }
     }
 
     public var nameOfUnit: String {
         switch self {
-        case let .Angle(unit): return unit.name
-        case let .Length(unit): return unit.name
-        case let .Time(unit): return unit.name
-        case let .Compound(unit): return unit.name
+        case let .angle(unit): return unit.name
+        case let .length(unit): return unit.name
+        case let .time(unit): return unit.name
+        case let .compound(unit): return unit.name
         }
     }
 
     public var symbolOfUnit: String {
         switch self {
-        case let .Angle(unit): return unit.symbol
-        case let .Length(unit): return unit.symbol
-        case let .Time(unit): return unit.symbol
-        case let .Compound(unit): return unit.symbol
+        case let .angle(unit): return unit.symbol
+        case let .length(unit): return unit.symbol
+        case let .time(unit): return unit.symbol
+        case let .compound(unit): return unit.symbol
         }
     }
 }
 
 public func == (lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> Bool {
     switch lhs {
-    case .Angle:
-        if case .Angle = rhs { return true }
+    case .angle:
+        if case .angle = rhs { return true }
         else { return false }
-    case .Length:
-        if case .Length = rhs { return true }
+    case .length:
+        if case .length = rhs { return true }
         else { return false }
-    case .Time:
-        if case .Time = rhs { return true }
+    case .time:
+        if case .time = rhs { return true }
         else { return false }
-    case let .Compound(leftUnit):
-        if case let .Compound(rightUnit) = rhs { return leftUnit == rightUnit }
+    case let .compound(leftUnit):
+        if case let .compound(rightUnit) = rhs { return leftUnit == rightUnit }
         else { return false }
     }
 }
