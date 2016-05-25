@@ -9,13 +9,13 @@
 A Swift based types for expressing/converting physical values in various units.
 
 
-# What is the point?
+# What is the Point?
 
 code before:
 ```
 struct Shape {
     var points: [Point]
-    var roation: Float // is it radians or degrees? What if somebody will not guess
+    var rotation: Float // is it radians or degrees? What if somebody will not guess?
 }
 ```
 
@@ -27,7 +27,7 @@ struct Shape {
 }
 ```
 
-# How to use?
+# How to Use?
 ```
 let angle1 = Angle(amount: 90.0, unit: .degree)
 // or
@@ -37,3 +37,10 @@ let angle3: Angle = 90.0.of(.degree)
 // or
 let angle4: Angle = 90.0 * .degree
 ```
+
+# More units
+- Angle
+- Length
+- Time
+- Volume
+- TODO
