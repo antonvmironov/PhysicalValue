@@ -10,15 +10,15 @@ import Foundation
 
 
 public protocol LinearPhysicalUnit: PhysicalUnit {
-    var fractionOfNormal: MathValue { get }
+  var fractionOfNormal: MathValue { get }
 }
 
 public extension LinearPhysicalUnit {
-    func normal(amount: MathValue) -> MathValue {
-        return amount * self.fractionOfNormal
-    }
-
-    func amount(normal: MathValue) -> MathValue {
-        return normal / self.fractionOfNormal
-    }
+  func normal(amount: MathValue) -> MathValue {
+    return amount * self.fractionOfNormal
+  }
+  
+  func amount(normal: MathValue) -> MathValue {
+    return normal / self.fractionOfNormal
+  }
 }

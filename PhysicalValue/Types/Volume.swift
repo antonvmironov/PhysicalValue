@@ -9,88 +9,88 @@
 import Foundation
 
 public struct Volume: PhysicalValue {
-    public typealias Unit = VolumeUnit
-
-    //MARK: Properties - Owned
-    public var amount: MathValue
-    public var unit: Unit
-
-    //MARK: Initializers
-    public init(amount: MathValue, unit: Unit) {
-        self.amount = amount
-        self.unit = unit
-    }
+  public typealias Unit = VolumeUnit
+  
+  // MARK: Properties - Owned
+  public var amount: MathValue
+  public var unit: Unit
+  
+  // MARK: Initializers
+  public init(amount: MathValue, unit: Unit) {
+    self.amount = amount
+    self.unit = unit
+  }
 }
 
 // MARK: -
 public enum VolumeUnit: PhysicalUnit {
-    // Normal is 1 Metre³
-
-    case cubeOfLength(LengthUnit)
-    case liter
-
-    public var kind: PhysicalUnitKind { return .compound(self.compundPhysicalUnit) }
-    public var hashValue: Int { return self.name.hashValue }
-
-    public var name: String {
-        switch self {
-        case let .cubeOfLength(lengthUnit): return "\(lengthUnit.name)\u{00B3}"
-        case .liter: return "liter"
-        }
+  // Normal is 1 Metre³
+  
+  case cubeOfLength(LengthUnit)
+  case liter
+  
+  public var kind: PhysicalUnitKind { return .compound(self.compundPhysicalUnit) }
+  public var hashValue: Int { return self.name.hashValue }
+  
+  public var name: String {
+    switch self {
+    case let .cubeOfLength(lengthUnit): return "\(lengthUnit.name)\u{00B3}"
+    case .liter: return "liter"
     }
-
-    public var symbol: String {
-        switch self {
-        case .cubeOfLength: return "m"
-        case .liter: return "l"
-        }
+  }
+  
+  public var symbol: String {
+    switch self {
+    case .cubeOfLength: return "m"
+    case .liter: return "l"
     }
-
-    public var wantsSpaceBetweenAmountAndSymbol: Bool {
-        switch self {
-        case .cubeOfLength: return false
-        case .liter: return false
-        }
+  }
+  
+  public var wantsSpaceBetweenAmountAndSymbol: Bool {
+    switch self {
+    case .cubeOfLength: return false
+    case .liter: return false
     }
-
-    public var compundPhysicalUnit: CompoundPhysicalUnit {
-        let lengthUnit: LengthUnit = eval {
-            if case let .cubeOfLength(lengthUnit) = self {
-                return lengthUnit
-            } else {
-                return .metre
-            }
-        }
-        let kinds = Bag(valuesAndCounts: (PhysicalUnitKind.length(lengthUnit), 3))
-        return CompoundPhysicalUnit(kinds: kinds)
+  }
+  
+  public var compundPhysicalUnit: CompoundPhysicalUnit {
+    let lengthUnit: LengthUnit = eval {
+      if case let .cubeOfLength(lengthUnit) = self {
+        return lengthUnit
+      } else {
+        return .metre
+      }
     }
-
-    public func normal(amount: MathValue) -> MathValue {
-        switch self {
-        case let .cubeOfLength(lengthUnit):
-            return pow(lengthUnit.normal(amount: pow(amount, 1.0 / 3.0)), 3.0)
-        case .liter:
-            return amount / 1000.0
-        }
+    let kinds = Bag(valuesAndCounts: (PhysicalUnitKind.length(lengthUnit), 3))
+    return CompoundPhysicalUnit(kinds: kinds)
+  }
+  
+  public func normal(amount: MathValue) -> MathValue {
+    switch self {
+    case let .cubeOfLength(lengthUnit):
+      return pow(lengthUnit.normal(amount: pow(amount, 1.0 / 3.0)), 3.0)
+    case .liter:
+      return amount / 1000.0
     }
-
-    public func amount(normal: MathValue) -> MathValue {
-        switch self {
-        case let .cubeOfLength(lengthUnit):
-            return pow(lengthUnit.amount(normal: pow(normal, 1.0 / 3.0)), 3.0)
-        case .liter:
-            return normal * 1000.0
-        }
+  }
+  
+  public func amount(normal: MathValue) -> MathValue {
+    switch self {
+    case let .cubeOfLength(lengthUnit):
+      return pow(lengthUnit.amount(normal: pow(normal, 1.0 / 3.0)), 3.0)
+    case .liter:
+      return normal * 1000.0
     }
+  }
 }
 
 public func ==(lhs: VolumeUnit, rhs: VolumeUnit) -> Bool {
-    switch lhs {
-    case let .cubeOfLength(leftUnit):
-        if case let .cubeOfLength(rightUnit) = rhs { return leftUnit == rightUnit }
-        else { return false }
-    case .liter:
-        if case .liter = rhs { return true }
-        else { return false }
-    }
+  switch lhs {
+  case let .cubeOfLength(leftUnit):
+    if case let .cubeOfLength(rightUnit) = rhs { return leftUnit == rightUnit }
+    else { return false }
+  case .liter:
+    if case .liter = rhs { return true }
+    else { return false }
+  }
 }

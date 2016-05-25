@@ -11,12 +11,12 @@ import Foundation
 public typealias MathValue = Double
 
 public func isEqual(_ lhs: MathValue,_ rhs: MathValue) -> Bool {
-    //TODO: check doubles appropriately
-    return lhs == rhs
+  //TODO: check doubles appropriately
+  return lhs == rhs
 }
 
 public extension MathValue {
-    func of<T: PhysicalValue>(_ unit: T.Unit) -> T {
-        return T(amount: self, unit: unit)
-    }
+  func of<T: PhysicalValue>(_ unit: T.Unit) -> T {
+    return T(amount: self, unit: unit)
+  }
 }
