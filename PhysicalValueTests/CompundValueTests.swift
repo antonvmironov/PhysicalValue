@@ -21,6 +21,7 @@ class compoundValueTests: XCTestCase {
 //    let area2 = (7.0 * LengthUnit.metre) * (3.0 * LengthUnit.metre)
     
     XCTAssertEqual(area.amount, 21.0)
+    XCTAssertEqual(LengthUnit.metre * LengthUnit.metre, CompoundPhysicalUnit(kinds: [.length(.metre), .length(.metre)]))
     XCTAssertEqual(area.unit, CompoundPhysicalUnit(kinds: [.length(.metre), .length(.metre)]))
 
     let volume1 = area * lengthZ

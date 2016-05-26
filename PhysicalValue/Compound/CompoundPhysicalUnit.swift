@@ -92,7 +92,7 @@ public func ==(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> Bool {
   return lhs.kinds == rhs.kinds
 }
 
-public func *<T: PhysicalUnit, U: PhysicalUnit>(lhs: T, rhs: U) -> CompoundPhysicalUnit {
+public func *(lhs: _PhysicalUnit, rhs: _PhysicalUnit) -> CompoundPhysicalUnit {
   let kinds = lhs.compoundPhysicalUnit.kinds + rhs.compoundPhysicalUnit.kinds
   return CompoundPhysicalUnit(kinds: kinds)
 }
@@ -181,8 +181,4 @@ private extension PhysicalUnitKind {
   static func isOrderedBeforeForStringExporting(lhs: PhysicalUnitKind, _ rhs: PhysicalUnitKind) -> Bool {
     return lhs.stringExportingPriority > rhs.stringExportingPriority
   }
-}
-
-func *(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> CompoundPhysicalUnit {
-  return CompoundPhysicalUnit(kinds: lhs.kinds + rhs.kinds)
 }

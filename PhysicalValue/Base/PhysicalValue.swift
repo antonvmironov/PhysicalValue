@@ -6,11 +6,18 @@
 //  Copyright © 2016 Anton Mironov. All rights reserved.
 //
 
-public protocol PhysicalValue: Equatable, CustomStringConvertible {
-  associatedtype Unit: PhysicalUnit
-  
+public protocol _PhysicalValue: CustomStringConvertible {
+  // PhysicalValue can only be used as a generic constraint. Intoducing superprotocol that can be used as type.
+  // None should direcly conform to this protocol. Use PhysicalValue instead.
   var amount: MathValue { get set }
   var normal: MathValue { get }
+  var _unit: _PhysicalUnit { get }
+}
+
+// MARK: -
+public protocol PhysicalValue: _PhysicalValue, Equatable {
+  associatedtype Unit: PhysicalUnit
+  
   var unit: Unit { get set }
   
   init(amount: MathValue, unit: Unit)
@@ -23,6 +30,7 @@ public protocol PhysicalValue: Equatable, CustomStringConvertible {
 
 public extension PhysicalValue {
   var normal: MathValue { return self.amount(unit: self.unit.unitOfNormal) }
+  var _unit: _PhysicalUnit { return self.unit }
 
   mutating func change(toUnit: Unit) {
     self.amount = Unit.transform(fromAmount: self.amount, fromUnit: self.unit, toUnit: toUnit)
