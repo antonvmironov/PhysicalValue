@@ -18,6 +18,7 @@ class compoundValueTests: XCTestCase {
     let lengthZ: Length = 5.0 * .metre
     
     let area = lengthX * lengthY
+//    let area2 = (7.0 * LengthUnit.metre) * (3.0 * LengthUnit.metre)
     
     XCTAssertEqual(area.amount, 21.0)
     XCTAssertEqual(area.unit, CompoundPhysicalUnit(kinds: [.length(.metre), .length(.metre)]))
@@ -27,13 +28,14 @@ class compoundValueTests: XCTestCase {
     XCTAssertEqual(volume1.amount, 105.0)
     XCTAssertEqual(volume1.unit, CompoundPhysicalUnit(kinds: [.length(.metre), .length(.metre), .length(.metre)]))
 
-//    let volume2: CompoundPhysicalValue = lengthX * lengthY * lengthZ
+//    let volume2 = lengthX * lengthY * lengthZ
 //    
 //    XCTAssertEqual(volume1, volume2)
 //    XCTAssertEqual(volume2.amount, 105.0)
 //    XCTAssertEqual(volume2.unit, CompoundPhysicalUnit(kinds: [.length(.metre), .length(.metre), .length(.metre)]))
     
-    let lengthTimesTime = lengthX * Time(amount:11, unit: .second)
+    let time: Time = 11.0 * .second
+    let lengthTimesTime = lengthX * time
     XCTAssertEqual(lengthTimesTime.amount, 77.0)
     XCTAssertEqual(lengthTimesTime.unit, CompoundPhysicalUnit(kinds: [.length(.metre), .time(.second)]))
   }

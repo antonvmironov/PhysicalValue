@@ -172,6 +172,8 @@ private extension PhysicalUnitKind {
     case .angle: return 5
     case .length: return 10
     case .time: return 1
+    case .speed: return 9
+    case .volume: return 9
     case .compound: return 0
     }
   }

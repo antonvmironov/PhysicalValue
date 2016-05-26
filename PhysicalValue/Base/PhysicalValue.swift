@@ -53,6 +53,12 @@ public func *<T: PhysicalValue>(lhs: MathValue, rhs: T.Unit) -> T {
   return T(amount: lhs, unit: rhs)
 }
 
+public func *<T: PhysicalValue>(lhs: T, rhs: MathValue) -> T {
+  var result = lhs
+  result.amount *= rhs
+  return result
+}
+
 public func ==<T: PhysicalValue>(lhs: T, rhs: T) -> Bool {
   if lhs.unit == rhs.unit {
     return isEqual(lhs.amount, rhs.amount)
