@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82393AE1CF6E6DC00D39594 /* CompundValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82393AD1CF6E6DC00D39594 /* CompundValueTests.swift */; };
+		F82393AF1CF6E6DC00D39594 /* CompundValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82393AD1CF6E6DC00D39594 /* CompundValueTests.swift */; };
+		F82393B11CF6E81000D39594 /* CompoundPhysicalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82393B01CF6E81000D39594 /* CompoundPhysicalValue.swift */; };
+		F82393B21CF6E81000D39594 /* CompoundPhysicalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82393B01CF6E81000D39594 /* CompoundPhysicalValue.swift */; };
 		F856B8091C98C1ED00FC59D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B8081C98C1ED00FC59D7 /* Bag.swift */; };
 		F856B80A1C98C1ED00FC59D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B8081C98C1ED00FC59D7 /* Bag.swift */; };
 		F856B80C1C98C24C00FC59D7 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F856B80B1C98C24C00FC59D7 /* Volume.swift */; };
@@ -59,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F82393AD1CF6E6DC00D39594 /* CompundValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompundValueTests.swift; sourceTree = "<group>"; };
+		F82393B01CF6E81000D39594 /* CompoundPhysicalValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundPhysicalValue.swift; sourceTree = "<group>"; };
 		F856B8081C98C1ED00FC59D7 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		F856B80B1C98C24C00FC59D7 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		F87F90931C957E3600B915A1 /* PhysicalValue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicalValue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +159,7 @@
 			children = (
 				F87F90A41C957E3600B915A1 /* Info.plist */,
 				F87F90B51C957F5800B915A1 /* AngleTests.swift */,
+				F82393AD1CF6E6DC00D39594 /* CompundValueTests.swift */,
 			);
 			path = PhysicalValueTests;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 			children = (
 				F87F90F91C96508700B915A1 /* PhysicalUnitKind.swift */,
 				F87F90F41C96506400B915A1 /* CompoundPhysicalUnit.swift */,
+				F82393B01CF6E81000D39594 /* CompoundPhysicalValue.swift */,
 			);
 			path = Compound;
 			sourceTree = "<group>";
@@ -383,6 +391,7 @@
 				F87F90C81C96331600B915A1 /* Time.swift in Sources */,
 				F87F90C61C96331600B915A1 /* Angle.swift in Sources */,
 				F8976AC31C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */,
+				F82393B11CF6E81000D39594 /* CompoundPhysicalValue.swift in Sources */,
 				F87F90C71C96331600B915A1 /* Length.swift in Sources */,
 				F8CA2F311C98C18E00CC6170 /* Extensions.swift in Sources */,
 				F87F90C51C96331600B915A1 /* PhysicalValue.swift in Sources */,
@@ -400,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82393AE1CF6E6DC00D39594 /* CompundValueTests.swift in Sources */,
 				F87F90B61C957F5800B915A1 /* AngleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +422,7 @@
 				F87F90E91C96447200B915A1 /* PhysicalValue.swift in Sources */,
 				F87F90EB1C96447200B915A1 /* Length.swift in Sources */,
 				F8976AC41C9CB06400D5F093 /* AtomicPhysicalUnit.swift in Sources */,
+				F82393B21CF6E81000D39594 /* CompoundPhysicalValue.swift in Sources */,
 				F87F90EA1C96447200B915A1 /* Angle.swift in Sources */,
 				F87F90E61C96446B00B915A1 /* Time.swift in Sources */,
 				F8CA2F321C98C18E00CC6170 /* Extensions.swift in Sources */,
@@ -429,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82393AF1CF6E6DC00D39594 /* CompundValueTests.swift in Sources */,
 				F87F90E51C96446700B915A1 /* AngleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

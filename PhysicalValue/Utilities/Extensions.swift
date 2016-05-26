@@ -26,7 +26,7 @@ public extension Collection where Iterator.Element: Hashable {
 
 // MARK: -
 public protocol Unitable {
-  mutating func unionInPlace(other: Self)
+  mutating func formUnion(other: Self)
   func union(other: Self) -> Self
 }
 
@@ -45,7 +45,7 @@ public extension Dictionary where Value: Hashable {
 }
 
 extension Dictionary: Unitable {
-  public mutating func unionInPlace(other: Dictionary<Key, Value>) {
+  public mutating func formUnion(other: Dictionary<Key, Value>) {
     for (key, value) in other {
       self[key] = value
     }
@@ -54,14 +54,14 @@ extension Dictionary: Unitable {
   @warn_unused_result
   public func union(other: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
     var result = Dictionary<Key, Value>(minimumCapacity: self.count + other.count)
-    result.unionInPlace(other: self)
-    result.unionInPlace(other: other)
+    result.formUnion(other: self)
+    result.formUnion(other: other)
     return result
   }
 }
 
 public func +=<U: Unitable>(lhs: inout U, rhs: U) {
-  lhs.unionInPlace(other: rhs)
+  lhs.formUnion(other: rhs)
 }
 
 public func +<U: Unitable>(lhs: U, rhs: U) -> U {

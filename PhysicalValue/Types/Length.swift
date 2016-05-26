@@ -30,7 +30,6 @@ public struct Length: PhysicalValue {
 
 // MARK: -
 public enum LengthUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
-  // Normal is 1 Metre
   
   // MARK: SI
   case metre
@@ -54,6 +53,7 @@ public enum LengthUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
   
   // MARK: -
   public var kind: PhysicalUnitKind { return .length(self) }
+  public var unitOfNormal: LengthUnit { return .metre }
   
   public var fractionOfNormal: MathValue {
     switch self {

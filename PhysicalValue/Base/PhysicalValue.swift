@@ -10,6 +10,7 @@ public protocol PhysicalValue: Equatable, CustomStringConvertible {
   associatedtype Unit: PhysicalUnit
   
   var amount: MathValue { get set }
+  var normal: MathValue { get }
   var unit: Unit { get set }
   
   init(amount: MathValue, unit: Unit)
@@ -20,8 +21,9 @@ public protocol PhysicalValue: Equatable, CustomStringConvertible {
   mutating func setAmount(_ amount: MathValue, unit: Unit)
 }
 
-// MARK: -
 public extension PhysicalValue {
+  var normal: MathValue { return self.amount(unit: self.unit.unitOfNormal) }
+
   mutating func change(toUnit: Unit) {
     self.amount = Unit.transform(fromAmount: self.amount, fromUnit: self.unit, toUnit: toUnit)
     self.unit = unit

@@ -24,11 +24,10 @@ public struct Speed: PhysicalValue {
 
 // MARK: -
 public enum SpeedUnit: PhysicalUnit {
-  // Normal is 1 Metre per 1 Second
-  
   case lengthPerTime(lengthUnit: LengthUnit, timeUnit: TimeUnit)
   
-  public var kind: PhysicalUnitKind { return .compound(self.compundPhysicalUnit) }
+  public var kind: PhysicalUnitKind { return .compound(self.compoundPhysicalUnit) }
+  public var unitOfNormal: SpeedUnit { return .lengthPerTime(lengthUnit: .metre, timeUnit: .second) }
   public var hashValue: Int { return self.name.hashValue }
   
   public var name: String {
@@ -51,7 +50,7 @@ public enum SpeedUnit: PhysicalUnit {
     }
   }
   
-  public var compundPhysicalUnit: CompoundPhysicalUnit {
+  public var compoundPhysicalUnit: CompoundPhysicalUnit {
     let lengthUnit: LengthUnit
     let timeUnit: TimeUnit
     switch self {
@@ -67,14 +66,14 @@ public enum SpeedUnit: PhysicalUnit {
   public func normal(amount: MathValue) -> MathValue {
     switch self {
     case .lengthPerTime:
-      return self.compundPhysicalUnit.normal(amount: amount)
+      return self.compoundPhysicalUnit.normal(amount: amount)
     }
   }
   
   public func amount(normal: MathValue) -> MathValue {
     switch self {
     case .lengthPerTime:
-      return self.compundPhysicalUnit.amount(normal: normal)
+      return self.compoundPhysicalUnit.amount(normal: normal)
     }
   }
 }

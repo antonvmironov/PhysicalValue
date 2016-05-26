@@ -93,13 +93,18 @@ public struct Bag<T : Hashable> : Collection, Hashable, ArrayLiteralConvertible 
 
 // MARK: -
 extension Bag: Unitable {
-  public mutating func unionInPlace(other: Bag<T>) {
-    self._contents.unionInPlace(other: other._contents)
+  public mutating func formUnion(other: Bag) {
+    for (kind, counter) in other {
+      self[kind] = (self[kind] ?? 0) + counter
+    }
   }
   
   @warn_unused_result
   public func union(other: Bag<T>) -> Bag<T> {
-    return Bag(contents: self._contents.union(other: other._contents))
+    var result = Bag<T>()
+    result.formUnion(other: self)
+    result.formUnion(other: other)
+    return result
   }
 }
 

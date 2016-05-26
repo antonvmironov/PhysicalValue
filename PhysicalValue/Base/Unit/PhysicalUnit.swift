@@ -13,7 +13,8 @@ public protocol PhysicalUnit: Hashable, CustomStringConvertible {
   var name: String { get }
   var symbol: String { get }
   var wantsSpaceBetweenAmountAndSymbol: Bool { get }
-  var compundPhysicalUnit: CompoundPhysicalUnit { get }
+  var compoundPhysicalUnit: CompoundPhysicalUnit { get }
+  var unitOfNormal: Self { get }
 
   static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue
   

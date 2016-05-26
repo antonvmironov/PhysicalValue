@@ -11,5 +11,5 @@ import Foundation
 public protocol AtomicPhysicalUnit: PhysicalUnit { }
 
 public extension AtomicPhysicalUnit {
-  var compundPhysicalUnit: CompoundPhysicalUnit { return CompoundPhysicalUnit(kinds: [self.kind]) }
+  var compoundPhysicalUnit: CompoundPhysicalUnit { return CompoundPhysicalUnit(kinds: [self.kind]) }
 }

@@ -30,7 +30,6 @@ public struct Time: PhysicalValue {
 
 // MARK: -
 public enum TimeUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
-  // Normal is 1 Second
   
   case year
   case day
@@ -42,6 +41,7 @@ public enum TimeUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
   case nanosecond
   
   public var kind: PhysicalUnitKind { return .time(self) }
+  public var unitOfNormal: TimeUnit { return .second }
   
   public var fractionOfNormal: MathValue {
     switch self {

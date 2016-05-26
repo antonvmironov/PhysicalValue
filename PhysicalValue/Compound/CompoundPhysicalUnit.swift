@@ -12,8 +12,15 @@ public struct CompoundPhysicalUnit: PhysicalUnit {
   public var kinds: Bag<PhysicalUnitKind>
   
   public var kind: PhysicalUnitKind { return .compound(self) }
-  
-  public var hashValue: Int { return self.kind.hashValue }
+  public var unitOfNormal: CompoundPhysicalUnit {
+    let resultKinds = self.kinds.reduce(Bag<PhysicalUnitKind>()) { (kindsAccumulator_, kindAndCounter) in
+      var kindsAccumulator = kindsAccumulator_
+      kindsAccumulator[kind] = (kindsAccumulator[kindAndCounter.value] ?? 0) + kindAndCounter.counter
+      return kindsAccumulator
+    }
+    return CompoundPhysicalUnit(kinds: resultKinds)
+  }
+  public var hashValue: Int { return self.kinds.hashValue }
   
   public var description: String {
     let exportableKindsAndExponents = self.exportableKindsAndExponents
@@ -46,8 +53,14 @@ public struct CompoundPhysicalUnit: PhysicalUnit {
   }
   
   public var wantsSpaceBetweenAmountAndSymbol: Bool { return true }
-  public var compundPhysicalUnit: CompoundPhysicalUnit { return self }
+  public var compoundPhysicalUnit: CompoundPhysicalUnit { return self }
   
+  // MARK: Initializers
+  public init(kinds: Bag<PhysicalUnitKind>) {
+    self.kinds = kinds
+  }
+  
+  // MARK: Methods
   public func normal(amount: MathValue) -> MathValue {
     var result = amount
     
@@ -80,7 +93,7 @@ public func ==(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> Bool {
 }
 
 public func *<T: PhysicalUnit, U: PhysicalUnit>(lhs: T, rhs: U) -> CompoundPhysicalUnit {
-  let kinds = lhs.compundPhysicalUnit.kinds + rhs.compundPhysicalUnit.kinds
+  let kinds = lhs.compoundPhysicalUnit.kinds + rhs.compoundPhysicalUnit.kinds
   return CompoundPhysicalUnit(kinds: kinds)
 }
 
@@ -166,4 +179,8 @@ private extension PhysicalUnitKind {
   static func isOrderedBeforeForStringExporting(lhs: PhysicalUnitKind, _ rhs: PhysicalUnitKind) -> Bool {
     return lhs.stringExportingPriority > rhs.stringExportingPriority
   }
+}
+
+func *(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> CompoundPhysicalUnit {
+  return CompoundPhysicalUnit(kinds: lhs.kinds + rhs.kinds)
 }

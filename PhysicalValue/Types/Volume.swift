@@ -24,12 +24,12 @@ public struct Volume: PhysicalValue {
 
 // MARK: -
 public enum VolumeUnit: PhysicalUnit {
-  // Normal is 1 Metre³
   
   case cubeOfLength(LengthUnit)
   case liter
   
-  public var kind: PhysicalUnitKind { return .compound(self.compundPhysicalUnit) }
+  public var kind: PhysicalUnitKind { return .compound(self.compoundPhysicalUnit) }
+  public var unitOfNormal: VolumeUnit { return .cubeOfLength(.metre) }
   public var hashValue: Int { return self.name.hashValue }
   
   public var name: String {
@@ -53,7 +53,7 @@ public enum VolumeUnit: PhysicalUnit {
     }
   }
   
-  public var compundPhysicalUnit: CompoundPhysicalUnit {
+  public var compoundPhysicalUnit: CompoundPhysicalUnit {
     let lengthUnit: LengthUnit = eval {
       if case let .cubeOfLength(lengthUnit) = self {
         return lengthUnit
@@ -67,14 +67,14 @@ public enum VolumeUnit: PhysicalUnit {
   
   public func normal(amount: MathValue) -> MathValue {
     switch self {
-    case .cubeOfLength: return self.compundPhysicalUnit.normal(amount: amount)
+    case .cubeOfLength: return self.compoundPhysicalUnit.normal(amount: amount)
     case .liter: return amount / 1000.0
     }
   }
   
   public func amount(normal: MathValue) -> MathValue {
     switch self {
-    case .cubeOfLength: return self.compundPhysicalUnit.amount(normal: normal)
+    case .cubeOfLength: return self.compoundPhysicalUnit.amount(normal: normal)
     case .liter: return normal * 1000.0
     }
   }

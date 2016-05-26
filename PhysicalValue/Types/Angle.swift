@@ -16,17 +16,17 @@ public struct Angle: PhysicalValue {
   public var unit: Unit
   
   // MARK: Properties - Derived
-  public var turns: Double {
+  public var turns: MathValue {
     get { return self.amount(unit: .turn) }
     set { self.setAmount(newValue, unit: .turn) }
   }
   
-  public var radians: Double {
+  public var radians: MathValue {
     get { return self.amount(unit: .radian) }
     set { self.setAmount(newValue, unit: .radian) }
   }
   
-  public var degrees: Double {
+  public var degrees: MathValue {
     get { return self.amount(unit: .degree) }
     set { self.setAmount(newValue, unit: .degree) }
   }
@@ -55,18 +55,14 @@ public struct Angle: PhysicalValue {
 
 
 public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
-  /* Normal is 1 Turn */
-  
   case turn
   case radian
   case degree
   case gon
   
   public var kind: PhysicalUnitKind { return .angle(self) }
-  
-  public var fractionOfNormal: MathValue {
-    return 1.0 / self.fullAngleValue
-  }
+  public var unitOfNormal: AngleUnit { return .turn }
+  public var fractionOfNormal: MathValue { return 1.0 / self.fullAngleValue }
   
   public var name: String {
     switch self {

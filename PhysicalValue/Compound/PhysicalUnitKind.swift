@@ -27,7 +27,7 @@ public enum PhysicalUnitKind: Hashable {
     }
   }
   
-  public var comoundPhysicalUnit: CompoundPhysicalUnit {
+  public var compoundPhysicalUnit: CompoundPhysicalUnit {
     if case let .compound(unit) = self {
       return unit
     } else {
@@ -96,4 +96,9 @@ public func == (lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> Bool {
     if case let .compound(rightUnit) = rhs { return leftUnit == rightUnit }
     else { return false }
   }
+}
+
+
+public func *(lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> PhysicalUnitKind {
+  return .compound(lhs.compoundPhysicalUnit * rhs.compoundPhysicalUnit)
 }
