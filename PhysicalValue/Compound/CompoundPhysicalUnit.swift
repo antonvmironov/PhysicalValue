@@ -9,6 +9,7 @@
 import Foundation
 
 public struct CompoundPhysicalUnit: PhysicalUnit {
+  public typealias Value = CompoundPhysicalValue
   public var kinds: Bag<PhysicalUnitKind>
   
   public var kind: PhysicalUnitKind { return .compound(self) }
@@ -90,11 +91,6 @@ public struct CompoundPhysicalUnit: PhysicalUnit {
 
 public func ==(lhs: CompoundPhysicalUnit, rhs: CompoundPhysicalUnit) -> Bool {
   return lhs.kinds == rhs.kinds
-}
-
-public func *(lhs: _PhysicalUnit, rhs: _PhysicalUnit) -> CompoundPhysicalUnit {
-  let kinds = lhs.compoundPhysicalUnit.kinds + rhs.compoundPhysicalUnit.kinds
-  return CompoundPhysicalUnit(kinds: kinds)
 }
 
 // MARK: -

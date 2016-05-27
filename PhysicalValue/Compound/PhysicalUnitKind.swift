@@ -76,7 +76,3 @@ public func == (lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> Bool {
     else { return false }
   }
 }
-
-public func *(lhs: PhysicalUnitKind, rhs: PhysicalUnitKind) -> PhysicalUnitKind {
-  return .compound(lhs.compoundPhysicalUnit * rhs.compoundPhysicalUnit)
-}

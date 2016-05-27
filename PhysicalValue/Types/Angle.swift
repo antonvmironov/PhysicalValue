@@ -55,6 +55,8 @@ public struct Angle: PhysicalValue {
 
 
 public enum AngleUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
+  public typealias Value = Angle
+
   case turn
   case radian
   case degree

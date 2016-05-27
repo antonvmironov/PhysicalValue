@@ -16,7 +16,7 @@ public protocol _PhysicalValue: CustomStringConvertible {
 
 // MARK: -
 public protocol PhysicalValue: _PhysicalValue, Equatable {
-  associatedtype Unit: PhysicalUnit
+  associatedtype Unit: _PhysicalUnit
   
   var unit: Unit { get set }
   
@@ -29,12 +29,12 @@ public protocol PhysicalValue: _PhysicalValue, Equatable {
 }
 
 public extension PhysicalValue {
-  var normal: MathValue { return self.amount(unit: self.unit.unitOfNormal) }
+  var normal: MathValue { return self.unit.normal(amount: self.amount) }
   var _unit: _PhysicalUnit { return self.unit }
 
   mutating func change(toUnit: Unit) {
-    self.amount = Unit.transform(fromAmount: self.amount, fromUnit: self.unit, toUnit: toUnit)
-    self.unit = unit
+    self.amount = self.amount(unit: toUnit)
+    self.unit = toUnit
   }
   
   func changed(toUnit: Unit) -> Self {
@@ -44,11 +44,13 @@ public extension PhysicalValue {
   }
   
   func amount(unit: Unit) -> MathValue {
-    return Unit.transform(fromAmount: self.amount, fromUnit: self.unit, toUnit: unit)
+    let normal = self.unit.normal(amount: self.amount)
+    return unit.amount(normal: normal)
   }
   
   mutating func setAmount(_ amount: MathValue, unit: Unit) {
-    self.amount = Unit.transform(fromAmount: amount, fromUnit: unit, toUnit: self.unit)
+    let normal = unit.normal(amount: amount)
+    self.amount = self.unit.amount(normal: normal)
   }
   
   var description: String {
@@ -57,22 +59,8 @@ public extension PhysicalValue {
   }
 }
 
-public func *<T: PhysicalValue>(lhs: MathValue, rhs: T.Unit) -> T {
-  return T(amount: lhs, unit: rhs)
-}
-
-public func *<T: PhysicalValue>(lhs: T, rhs: MathValue) -> T {
-  var result = lhs
-  result.amount *= rhs
-  return result
-}
-
 public func ==<T: PhysicalValue>(lhs: T, rhs: T) -> Bool {
-  if lhs.unit == rhs.unit {
-    return isEqual(lhs.amount, rhs.amount)
-  } else {
-    let leftNormal = lhs.unit.normal(amount: lhs.amount)
-    let rightNormal = rhs.unit.normal(amount: rhs.amount)
-    return isEqual(leftNormal, rightNormal)
-  }
+  let leftNormal = lhs.unit.normal(amount: lhs.amount)
+  let rightNormal = rhs.unit.normal(amount: rhs.amount)
+  return isEqual(leftNormal, rightNormal)
 }

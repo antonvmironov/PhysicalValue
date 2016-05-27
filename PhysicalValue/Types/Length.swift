@@ -26,11 +26,17 @@ public struct Length: PhysicalValue {
     self.amount = amount
     self.unit = unit
   }
+  
+  public init(meters: MathValue) {
+    self.amount = meters
+    self.unit = .metre
+  }
 }
 
 // MARK: -
 public enum LengthUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
-  
+  public typealias Value = Length
+
   // MARK: SI
   case metre
   case kilometre

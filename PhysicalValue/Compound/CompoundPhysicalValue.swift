@@ -21,10 +21,3 @@ public struct CompoundPhysicalValue: PhysicalValue {
     self.unit = unit
   }
 }
-
-public func *(lhs: _PhysicalValue, rhs: _PhysicalValue) -> CompoundPhysicalValue {
-  let normal = lhs.normal * rhs.normal
-  let unit = lhs._unit * rhs._unit
-  let amount = unit.amount(normal: normal)
-  return CompoundPhysicalValue(amount: amount, unit: unit)
-}

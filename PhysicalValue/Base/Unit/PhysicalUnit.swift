@@ -22,22 +22,12 @@ public protocol _PhysicalUnit: CustomStringConvertible {
   func amount(normal: MathValue) -> MathValue
 }
 
-public extension PhysicalUnit {
+public extension _PhysicalUnit {
   var description: String { return self.symbol }
 }
 
 // MARK: -
 public protocol PhysicalUnit: _PhysicalUnit, Hashable {
+  associatedtype Value: PhysicalValue// where Value.Unit == Self
   var unitOfNormal: Self { get }
-
-  static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue
-}
-
-public extension PhysicalUnit {
-  static func transform(fromAmount: MathValue, fromUnit: Self, toUnit: Self) -> MathValue {
-    guard fromUnit != toUnit else { return fromAmount }
-    let normal = fromUnit.normal(amount: fromAmount)
-    let toAmount = toUnit.amount(normal: normal)
-    return toAmount
-  }
 }

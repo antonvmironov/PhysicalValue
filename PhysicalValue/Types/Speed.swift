@@ -24,6 +24,8 @@ public struct Speed: PhysicalValue {
 
 // MARK: -
 public enum SpeedUnit: PhysicalUnit {
+  public typealias Value = Speed
+  
   case lengthPerTime(lengthUnit: LengthUnit, timeUnit: TimeUnit)
   
   public var kind: PhysicalUnitKind { return .compound(self.compoundPhysicalUnit) }

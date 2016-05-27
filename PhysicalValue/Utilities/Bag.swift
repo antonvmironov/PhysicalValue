@@ -35,7 +35,7 @@ public struct Bag<T : Hashable> : Collection, Hashable, ArrayLiteralConvertible 
   public var underestimatedCount: Int { return self._contents.underestimatedCount }
   
   // MARK: Initializers
-  private init(contents: [T : Int]) {
+  public init(contents: [T : Int]) {
     self._contents = contents
   }
   

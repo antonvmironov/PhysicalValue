@@ -10,10 +10,9 @@ import Foundation
 import XCTest
 @testable import PhysicalValue
 
-
 class AngleTests: XCTestCase {
   
-  func testturnsBasedInit() {
+  func testTurnsBasedInit() {
     do {
       let angle = Angle(amount: 1.0, unit: .turn)
       XCTAssertEqual(angle.amount, 1.0)
@@ -37,9 +36,15 @@ class AngleTests: XCTestCase {
       XCTAssertEqual(angle.amount, 1.0)
       XCTAssertEqual(angle.unit, Angle.Unit.turn)
     }
+    
+    do {
+      let angle: Angle = .turn * 1.0
+      XCTAssertEqual(angle.amount, 1.0)
+      XCTAssertEqual(angle.unit, Angle.Unit.turn)
+    }
   }
   
-  func testradiansBasedInit() {
+  func testRadiansBasedInit() {
     do {
       let angle = Angle(amount: M_PI, unit: .radian)
       XCTAssertEqual(angle.amount, M_PI)
@@ -63,9 +68,15 @@ class AngleTests: XCTestCase {
       XCTAssertEqual(angle.amount, M_PI)
       XCTAssertEqual(angle.unit, Angle.Unit.radian)
     }
+    
+    do {
+      let angle: Angle = .radian * M_PI
+      XCTAssertEqual(angle.amount, M_PI)
+      XCTAssertEqual(angle.unit, Angle.Unit.radian)
+    }
   }
   
-  func testdegreesBasedInit() {
+  func testDegreesBasedInit() {
     do {
       let angle = Angle(amount: 90.0, unit: .degree)
       XCTAssertEqual(angle.amount, 90.0)
@@ -89,9 +100,15 @@ class AngleTests: XCTestCase {
       XCTAssertEqual(angle.amount, 90.0)
       XCTAssertEqual(angle.unit, Angle.Unit.degree)
     }
+    
+    do {
+      let angle: Angle = .degree * 90.0
+      XCTAssertEqual(angle.amount, 90.0)
+      XCTAssertEqual(angle.unit, Angle.Unit.degree)
+    }
   }
   
-  func testgonsBasedInit() {
+  func testGonsBasedInit() {
     do {
       let angle = Angle(amount: 100.0, unit: .gon)
       XCTAssertEqual(angle.amount, 100.0)
@@ -106,6 +123,12 @@ class AngleTests: XCTestCase {
     
     do {
       let angle: Angle = 100.0 * .gon
+      XCTAssertEqual(angle.amount, 100.0)
+      XCTAssertEqual(angle.unit, Angle.Unit.gon)
+    }
+    
+    do {
+      let angle: Angle = .gon * 100.0
       XCTAssertEqual(angle.amount, 100.0)
       XCTAssertEqual(angle.unit, Angle.Unit.gon)
     }

@@ -24,7 +24,8 @@ public struct Volume: PhysicalValue {
 
 // MARK: -
 public enum VolumeUnit: PhysicalUnit {
-  
+  public typealias Value = Volume
+
   case cubeOfLength(LengthUnit)
   case liter
   

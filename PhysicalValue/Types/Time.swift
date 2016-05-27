@@ -30,6 +30,7 @@ public struct Time: PhysicalValue {
 
 // MARK: -
 public enum TimeUnit: LinearPhysicalUnit, AtomicPhysicalUnit {
+  public typealias Value = Time
   
   case year
   case day
